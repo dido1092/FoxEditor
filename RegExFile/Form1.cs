@@ -29,6 +29,7 @@ namespace RegExFile
 {
     public partial class Form1 : Form
     {
+        private const char Separator = ' ';
         private static string pathToAddFiles = string.Empty;
         private static string[] pathWithFile = { };
         private static int page = 1;
@@ -36,6 +37,9 @@ namespace RegExFile
         private static string text = string.Empty;
         private static string name = string.Empty;
         private static string destination = string.Empty;
+        private static string createText = string.Empty;
+        public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
+        //private int PageNum = 0;
 
         public Form1()
         {
@@ -186,7 +190,37 @@ namespace RegExFile
         {
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
 
-            string createText = richTextBoxFileWindow.Text;
+            if (checkBoxSaveAllPages.Checked)
+            {
+                PdfReader reader = new PdfReader(pathWithFile[0]);
+
+                numPages = reader.NumberOfPages;
+
+                ITextExtractionStrategy strategy = new SimpleTextExtractionStrategy();
+                progressBarSaveAllPages.Minimum = 1;
+                progressBarSaveAllPages.Maximum = numPages;
+
+                for (int pageNum = 1; pageNum <= numPages; pageNum++)
+                {
+                    createText = PdfTextExtractor.GetTextFromPage(reader, pageNum, strategy);
+                    progressBarSaveAllPages.Value = pageNum;
+
+                }
+                //createText = File.ReadAllText(pathWithFile[0]);
+            }
+            else
+            {
+                createText = richTextBoxFileWindow.Text;
+            }
+            if (checkBoxRememberText.Checked)
+            {
+                createText = "";
+
+                foreach (var text in hsRememberText)
+                {
+                    createText += Environment.NewLine + $"PAGE ====================  {text.PageNum}  ====================  " + Environment.NewLine + Environment.NewLine + $"{text.Text}" + Environment.NewLine;
+                }
+            }
             string extension = comboBoxExtension.Text.ToLower();
             if (extension == "" || extension == " ")
             {
@@ -206,14 +240,35 @@ namespace RegExFile
             //}
             else// if (extension == "pdf")
             {
-
                 if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    destination = folderBrowserDialog1.SelectedPath + $"\\{page}.{extension}";
+                    if (checkBoxSaveAllPages.Checked)
+                    {
+                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";//Take only name and extension
+                    }
+                    else
+                    {
+                        destination = folderBrowserDialog1.SelectedPath + $"\\{page}.{extension}";
+                    }
+                    if (checkBoxRememberText.Checked)
+                    {
+                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";//Take only name and extension
+                    }
                 }
                 else
                 {
-                    destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{page}.{extension}";
+                    if (checkBoxSaveAllPages.Checked)
+                    {
+                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";
+                    }
+                    else
+                    {
+                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{page}.{extension}";
+                    }
+                    if (checkBoxRememberText.Checked)
+                    {
+                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified__{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";
+                    }
                 }
 
                 DocumentCore dc = new DocumentCore();
@@ -265,5 +320,105 @@ namespace RegExFile
                 richTextBoxFileWindow.Font = new System.Drawing.Font(richTextBoxFileWindow.Font.FontFamily, newFontSize);
             }
         }
+
+        private void buttonRemoveSpaces_Click(object sender, EventArgs e)
+        {
+            if (richTextBoxFileWindow.SelectedText != "")
+            {
+                string[] removeSpaces = richTextBoxFileWindow.SelectedText.Split(' ');
+                string newWord = string.Empty;
+                for (int i = 0; i < removeSpaces.Length; i++)
+                {
+                    newWord += removeSpaces[i].Replace(" ", "");
+                }
+                richTextBoxFileWindow.SelectedText = newWord;
+            }
+            else
+            {
+                MessageBox.Show("Select Text Please!");
+            }
+        }
+        private void buttonToUpper_Click(object sender, EventArgs e)
+        {
+            if (richTextBoxFileWindow.SelectedText != "")
+            {
+                string selectedText = richTextBoxFileWindow.SelectedText.ToUpper();
+                richTextBoxFileWindow.SelectedText = selectedText;
+            }
+            else
+            {
+                MessageBox.Show("Select Text Please!");
+            }
+        }
+        private void buttonToLower_Click(object sender, EventArgs e)
+        {
+            if (richTextBoxFileWindow.SelectedText != "")
+            {
+                string selectedText = richTextBoxFileWindow.SelectedText.ToLower();
+                richTextBoxFileWindow.SelectedText = selectedText;
+            }
+            else
+            {
+                MessageBox.Show("Select Text Please!");
+            }
+        }
+        private void buttonAbv_Click(object sender, EventArgs e)
+        {
+            string word = richTextBoxFileWindow.SelectedText;
+
+            string newWord = word[0].ToString().ToUpper();//First letter toUpper
+            newWord += word.Substring(1, word.Length - 1).ToLower();//Other letters toLower
+
+            richTextBoxFileWindow.SelectedText = newWord;
+        }
+        private void buttonRememberText_Click_1(object sender, EventArgs e)
+        {
+            RememberText rememberText = new RememberText();
+
+            rememberText.PageNum = page;
+            rememberText.Text = richTextBoxFileWindow.Text;
+
+            var previuosEqualPage = hsRememberText.Where(pn => pn.PageNum == page && pn.Text != richTextBoxFileWindow.Text).FirstOrDefault();
+
+            if (previuosEqualPage != null)
+            {
+                hsRememberText.Remove(previuosEqualPage);
+            }
+            hsRememberText.Add(rememberText);
+
+            if (!textBoxRememberText.Text.Contains(page.ToString()))
+            {
+                textBoxRememberText.Text += page + " \t";
+            }
+            else
+            {
+                MessageBox.Show("The Page is Overwrode!");
+            }
+        }
+
+        private void checkBoxSaveAllPages_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxRememberText.Checked = false;
+        }
+
+        private void checkBoxRememberText_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxSaveAllPages.Checked = false;
+        }
+
+        private void buttonLoadRememberPage_Click(object sender, EventArgs e)
+        {
+            int remPage = int.Parse(textBoxRememberText.SelectedText);
+
+            page = remPage;
+            ReadPdf(pathWithFile[0]);
+
+            var remText = hsRememberText.Select(t => new { t.Text, t.PageNum }).Where(t => t.PageNum == remPage).FirstOrDefault();
+            string text = remText.Text;
+
+            richTextBoxFileWindow.Text = text;
+        }
+
+
     }
 }
