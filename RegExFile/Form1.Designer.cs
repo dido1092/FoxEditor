@@ -42,6 +42,7 @@
             this.buttonSelectPege = new System.Windows.Forms.Button();
             this.comboBoxExtension = new System.Windows.Forms.ComboBox();
             this.hScrollBarFont = new System.Windows.Forms.HScrollBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxRegEx
@@ -170,18 +171,28 @@
             // 
             // hScrollBarFont
             // 
-            this.hScrollBarFont.Location = new System.Drawing.Point(565, 73);
+            this.hScrollBarFont.Location = new System.Drawing.Point(574, 67);
             this.hScrollBarFont.Name = "hScrollBarFont";
             this.hScrollBarFont.Size = new System.Drawing.Size(80, 17);
             this.hScrollBarFont.TabIndex = 13;
             this.hScrollBarFont.Value = 5;
             this.hScrollBarFont.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarFont_Scroll);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(520, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Font Size";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 755);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.hScrollBarFont);
             this.Controls.Add(this.comboBoxExtension);
             this.Controls.Add(this.buttonSelectPege);
@@ -220,6 +231,7 @@
         private System.Windows.Forms.Button buttonSelectPege;
         private System.Windows.Forms.ComboBox comboBoxExtension;
         private System.Windows.Forms.HScrollBar hScrollBarFont;
+        private System.Windows.Forms.Label label2;
     }
 }
 
