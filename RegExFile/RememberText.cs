@@ -17,20 +17,10 @@ namespace RegExFile
             var rememberText = obj as RememberText;
 
             return rememberText.PageNum == this.PageNum;
-            //var rememberText = obj as RememberText;
-            //RememberText rememberText = obj as RememberText;
-
-            //if (obj == rememberText)
-            //{
-            //    return Text == rememberText.Text && PageNum == rememberText.PageNum;
-            //}
-            //return false;
-
         }
         public override int GetHashCode()
         {
             return this.PageNum;
-            //return this.PageNum.GetHashCode() ^ this.Text.GetHashCode();// + 10 примерно за да е различен HashCode
         }
     }
 }
