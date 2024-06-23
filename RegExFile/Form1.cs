@@ -24,6 +24,8 @@ using SautinSoft.Document;
 using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Controls;
+using System.Drawing.Text;
+using System.Web.UI.WebControls;
 
 namespace RegExFile
 {
@@ -39,12 +41,12 @@ namespace RegExFile
         private static string destination = string.Empty;
         private static string createText = string.Empty;
         public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
-        //private int PageNum = 0;
+        private System.Windows.Forms.Timer autosaveTimer;
 
         public Form1()
         {
             InitializeComponent();
-
+            PopulateFontComboBox(comboBoxFont);
         }
         private void textBoxRegEx_KeyDown(object sender, KeyEventArgs e)
         {
@@ -127,6 +129,7 @@ namespace RegExFile
             {
                 page = 1;
             }
+            textBoxPage.Text = page.ToString();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -140,6 +143,7 @@ namespace RegExFile
             {
                 page = numPages;
             }
+            textBoxPage.Text = page.ToString();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -206,7 +210,6 @@ namespace RegExFile
                     progressBarSaveAllPages.Value = pageNum;
 
                 }
-                //createText = File.ReadAllText(pathWithFile[0]);
             }
             else
             {
@@ -218,7 +221,7 @@ namespace RegExFile
 
                 foreach (var text in hsRememberText)
                 {
-                    createText += Environment.NewLine + $"PAGE ====================  {text.PageNum}  ====================  " + Environment.NewLine + Environment.NewLine + $"{text.Text}" + Environment.NewLine;
+                    createText += Environment.NewLine + $" ===================================  {text.PageNum}  ===================================  " + Environment.NewLine + Environment.NewLine + $"{text.Text}" + Environment.NewLine;
                 }
             }
             string extension = comboBoxExtension.Text.ToLower();
@@ -244,7 +247,7 @@ namespace RegExFile
                 {
                     if (checkBoxSaveAllPages.Checked)
                     {
-                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";//Take only name and extension
+                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1].Replace(".pdf", ""))}.{extension}";//Take only name and extension
                     }
                     else
                     {
@@ -252,14 +255,14 @@ namespace RegExFile
                     }
                     if (checkBoxRememberText.Checked)
                     {
-                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";//Take only name and extension
+                        destination = folderBrowserDialog1.SelectedPath + $"\\Modified_{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1].Replace(".pdf", ""))}.{extension}";//Take only name and extension
                     }
                 }
                 else
                 {
-                    if (checkBoxSaveAllPages.Checked)
+                    if (checkBoxRememberText.Checked)
                     {
-                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";
+                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1].Replace(".pdf", ""))}.{extension}";
                     }
                     else
                     {
@@ -267,7 +270,7 @@ namespace RegExFile
                     }
                     if (checkBoxRememberText.Checked)
                     {
-                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified__{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1])}.{extension}";
+                        destination = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Modified__{string.Join(" ", hsRememberText.Select(pn => pn.PageNum))}_Pages_{System.IO.Path.GetFileName(pathWithFile[pathWithFile.Length - 1].Replace(".pdf", ""))}.{extension}";
                     }
                 }
 
@@ -338,6 +341,41 @@ namespace RegExFile
                 MessageBox.Show("Select Text Please!");
             }
         }
+        private void buttonReplaceAll_Click(object sender, EventArgs e)
+        {
+            string oldSymbol = textBoxOldSymbol.Text.Replace(" ", "");
+            string newSymbol = textBoxNewSymbol.Text.Replace(" ", "");
+
+            if (oldSymbol.Length == 1 && newSymbol.Length == 1)
+            {
+                string allText = richTextBoxFileWindow.Text;
+
+                string[] words = allText.Split(' ');
+
+                string word = string.Empty;
+
+                string newText = string.Empty;
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    word = words[i];
+
+                    if (word.Contains(oldSymbol))
+                    {
+                        newText += word.Replace(oldSymbol, newSymbol);
+                    }
+                    else
+                    {
+                        newText += word + " ";
+                    }
+                }
+                richTextBoxFileWindow.Text = newText;
+            }
+            else
+            {
+                MessageBox.Show("Enter only 1 symbol on fields!");
+            }
+        }
         private void buttonToUpper_Click(object sender, EventArgs e)
         {
             if (richTextBoxFileWindow.SelectedText != "")
@@ -372,6 +410,11 @@ namespace RegExFile
             richTextBoxFileWindow.SelectedText = newWord;
         }
         private void buttonRememberText_Click_1(object sender, EventArgs e)
+        {
+            RememberText();
+        }
+
+        private void RememberText()
         {
             RememberText rememberText = new RememberText();
 
@@ -418,7 +461,99 @@ namespace RegExFile
 
             richTextBoxFileWindow.Text = text;
         }
+        private void buttonRemovePage_Click(object sender, EventArgs e)
+        {
+            string[] pages = textBoxRememberText.Text.Split();
+            string newText = string.Empty;
+            int currentPage = 0;
+            int lastPageBuffer = 0;
 
+            int selectedPage = int.Parse(textBoxRememberText.SelectedText);
+            RememberText rm = new RememberText() { PageNum = selectedPage };
 
+            hsRememberText.Remove(rm);
+
+            for (int i = 0; i < pages.Length; i++)
+            {
+                if (pages[i] != "")
+                {
+                    currentPage = int.Parse(pages[i]);
+                }
+                if ((currentPage != selectedPage) && (currentPage != lastPageBuffer))
+                {
+                    newText += currentPage + Environment.NewLine;
+                }
+
+                lastPageBuffer = currentPage;
+            }
+
+            textBoxRememberText.Text = newText;
+        }
+
+        private void buttonRemoveEquals_Click(object sender, EventArgs e)
+        {
+            char[] symbols = richTextBoxFileWindow.SelectedText.ToCharArray();
+            string allText = richTextBoxFileWindow.Text;
+            string text = string.Empty;
+
+            if (symbols.Length == 1)
+            {
+                for (int i = 0; i < allText.Length; i++)
+                {
+                    for (int j = 0; j < symbols.Length; j++)
+                    {
+                        if (allText[i] != symbols[j])
+                        {
+                            text += allText[i];
+                        }
+                    }
+                }
+                richTextBoxFileWindow.Text = text;
+            }
+            else
+            {
+                MessageBox.Show("Select One Symbol!");
+            }
+        }
+
+        private void comboBoxFont_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFontName = (string)comboBoxFont.SelectedItem;
+
+            richTextBoxFileWindow.Font = new System.Drawing.Font(selectedFontName, richTextBoxFileWindow.SelectionFont.Size, richTextBoxFileWindow.SelectionFont.Style);
+        }
+        private void PopulateFontComboBox(System.Windows.Forms.ComboBox comboBox)
+        {
+            var fontCollection = new InstalledFontCollection();
+            var fontFamilies = fontCollection.Families;
+
+            foreach (var fontFamily in fontFamilies)
+            {
+                comboBoxFont.Items.Add(fontFamily.Name);
+            }
+        }
+
+        private void checkBoxAutoSave_CheckedChanged(object sender, EventArgs e)
+        {
+            if (richTextBoxFileWindow.Text == "")
+            {
+                checkBoxAutoSave.Checked = false;
+                MessageBox.Show("Open File!");
+                return;
+            }
+            if (checkBoxAutoSave.Checked && comboBoxMin.Text != "")
+            {
+                autosaveTimer = new System.Windows.Forms.Timer();
+                autosaveTimer.Interval = int.Parse(comboBoxMin.Text) * 60000; // 60000 = 1 minute interval
+                autosaveTimer.Tick += buttonRememberText_Click_1;
+                autosaveTimer.Start();
+            }
+            else
+            {
+                checkBoxAutoSave.Checked = false;
+                MessageBox.Show("Enter minutes!");
+                return;
+            }
+        }
     }
 }

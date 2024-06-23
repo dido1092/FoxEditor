@@ -54,6 +54,17 @@
             this.buttonToUpper = new System.Windows.Forms.Button();
             this.buttonToLower = new System.Windows.Forms.Button();
             this.buttonAbv = new System.Windows.Forms.Button();
+            this.buttonRemoveEquals = new System.Windows.Forms.Button();
+            this.textBoxOldSymbol = new System.Windows.Forms.TextBox();
+            this.buttonReplaceAll = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxNewSymbol = new System.Windows.Forms.TextBox();
+            this.comboBoxFont = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
+            this.comboBoxMin = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonRemovePage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxRegEx
@@ -75,7 +86,7 @@
             // 
             // richTextBoxFileWindow
             // 
-            this.richTextBoxFileWindow.Location = new System.Drawing.Point(45, 123);
+            this.richTextBoxFileWindow.Location = new System.Drawing.Point(36, 121);
             this.richTextBoxFileWindow.Name = "richTextBoxFileWindow";
             this.richTextBoxFileWindow.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.richTextBoxFileWindow.Size = new System.Drawing.Size(775, 634);
@@ -95,7 +106,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(210, 94);
+            this.buttonPrevious.Location = new System.Drawing.Point(148, 87);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 4;
@@ -105,7 +116,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(484, 94);
+            this.buttonNext.Location = new System.Drawing.Point(422, 87);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 5;
@@ -116,7 +127,7 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(352, 104);
+            this.labelPages.Location = new System.Drawing.Point(290, 97);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(24, 13);
             this.labelPages.TabIndex = 6;
@@ -134,18 +145,18 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(826, 226);
+            this.buttonSave.Location = new System.Drawing.Point(1082, 141);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(96, 29);
             this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "S A V E  F I L E";
+            this.buttonSave.Text = "EXPORT TO";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // labelDestination
             // 
             this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(42, 772);
+            this.labelDestination.Location = new System.Drawing.Point(33, 762);
             this.labelDestination.Name = "labelDestination";
             this.labelDestination.Size = new System.Drawing.Size(63, 13);
             this.labelDestination.TabIndex = 9;
@@ -153,14 +164,14 @@
             // 
             // textBoxPage
             // 
-            this.textBoxPage.Location = new System.Drawing.Point(338, 67);
+            this.textBoxPage.Location = new System.Drawing.Point(276, 60);
             this.textBoxPage.Name = "textBoxPage";
             this.textBoxPage.Size = new System.Drawing.Size(56, 20);
             this.textBoxPage.TabIndex = 10;
             // 
             // buttonSelectPege
             // 
-            this.buttonSelectPege.Location = new System.Drawing.Point(400, 62);
+            this.buttonSelectPege.Location = new System.Drawing.Point(338, 55);
             this.buttonSelectPege.Name = "buttonSelectPege";
             this.buttonSelectPege.Size = new System.Drawing.Size(75, 28);
             this.buttonSelectPege.TabIndex = 11;
@@ -175,16 +186,16 @@
             "TXT",
             "PDF",
             "DOCX"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(826, 123);
+            this.comboBoxExtension.Location = new System.Drawing.Point(1082, 50);
             this.comboBoxExtension.Name = "comboBoxExtension";
             this.comboBoxExtension.Size = new System.Drawing.Size(96, 21);
             this.comboBoxExtension.TabIndex = 12;
             // 
             // hScrollBarFont
             // 
-            this.hScrollBarFont.Location = new System.Drawing.Point(740, 67);
+            this.hScrollBarFont.Location = new System.Drawing.Point(708, 67);
             this.hScrollBarFont.Name = "hScrollBarFont";
-            this.hScrollBarFont.Size = new System.Drawing.Size(80, 17);
+            this.hScrollBarFont.Size = new System.Drawing.Size(112, 17);
             this.hScrollBarFont.TabIndex = 13;
             this.hScrollBarFont.Value = 5;
             this.hScrollBarFont.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarFont_Scroll);
@@ -192,7 +203,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(686, 70);
+            this.label2.Location = new System.Drawing.Point(646, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 14;
@@ -201,7 +212,7 @@
             // checkBoxSaveAllPages
             // 
             this.checkBoxSaveAllPages.AutoSize = true;
-            this.checkBoxSaveAllPages.Location = new System.Drawing.Point(826, 159);
+            this.checkBoxSaveAllPages.Location = new System.Drawing.Point(1082, 86);
             this.checkBoxSaveAllPages.Name = "checkBoxSaveAllPages";
             this.checkBoxSaveAllPages.Size = new System.Drawing.Size(96, 17);
             this.checkBoxSaveAllPages.TabIndex = 15;
@@ -211,14 +222,14 @@
             // 
             // progressBarSaveAllPages
             // 
-            this.progressBarSaveAllPages.Location = new System.Drawing.Point(826, 261);
+            this.progressBarSaveAllPages.Location = new System.Drawing.Point(1082, 176);
             this.progressBarSaveAllPages.Name = "progressBarSaveAllPages";
             this.progressBarSaveAllPages.Size = new System.Drawing.Size(96, 10);
             this.progressBarSaveAllPages.TabIndex = 16;
             // 
             // buttonRemoveSpaces
             // 
-            this.buttonRemoveSpaces.Location = new System.Drawing.Point(1023, 226);
+            this.buttonRemoveSpaces.Location = new System.Drawing.Point(826, 481);
             this.buttonRemoveSpaces.Name = "buttonRemoveSpaces";
             this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 23);
             this.buttonRemoveSpaces.TabIndex = 17;
@@ -229,7 +240,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(827, 104);
+            this.label3.Location = new System.Drawing.Point(1079, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 19;
@@ -237,9 +248,9 @@
             // 
             // buttonRememberText
             // 
-            this.buttonRememberText.Location = new System.Drawing.Point(826, 325);
+            this.buttonRememberText.Location = new System.Drawing.Point(826, 290);
             this.buttonRememberText.Name = "buttonRememberText";
-            this.buttonRememberText.Size = new System.Drawing.Size(152, 32);
+            this.buttonRememberText.Size = new System.Drawing.Size(182, 32);
             this.buttonRememberText.TabIndex = 20;
             this.buttonRememberText.Text = "Remember Page";
             this.buttonRememberText.UseVisualStyleBackColor = true;
@@ -248,17 +259,17 @@
             // checkBoxRememberText
             // 
             this.checkBoxRememberText.AutoSize = true;
-            this.checkBoxRememberText.Location = new System.Drawing.Point(826, 191);
+            this.checkBoxRememberText.Location = new System.Drawing.Point(1082, 118);
             this.checkBoxRememberText.Name = "checkBoxRememberText";
-            this.checkBoxRememberText.Size = new System.Drawing.Size(127, 17);
+            this.checkBoxRememberText.Size = new System.Drawing.Size(136, 17);
             this.checkBoxRememberText.TabIndex = 21;
-            this.checkBoxRememberText.Text = "From Remember Text";
+            this.checkBoxRememberText.Text = "From Remember Pages";
             this.checkBoxRememberText.UseVisualStyleBackColor = true;
             this.checkBoxRememberText.CheckedChanged += new System.EventHandler(this.checkBoxRememberText_CheckedChanged);
             // 
             // textBoxRememberText
             // 
-            this.textBoxRememberText.Location = new System.Drawing.Point(826, 363);
+            this.textBoxRememberText.Location = new System.Drawing.Point(826, 328);
             this.textBoxRememberText.Multiline = true;
             this.textBoxRememberText.Name = "textBoxRememberText";
             this.textBoxRememberText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -267,9 +278,9 @@
             // 
             // buttonLoadRememberPage
             // 
-            this.buttonLoadRememberPage.Location = new System.Drawing.Point(903, 363);
+            this.buttonLoadRememberPage.Location = new System.Drawing.Point(903, 328);
             this.buttonLoadRememberPage.Name = "buttonLoadRememberPage";
-            this.buttonLoadRememberPage.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoadRememberPage.Size = new System.Drawing.Size(105, 23);
             this.buttonLoadRememberPage.TabIndex = 23;
             this.buttonLoadRememberPage.Text = "Load Page";
             this.buttonLoadRememberPage.UseVisualStyleBackColor = true;
@@ -277,9 +288,9 @@
             // 
             // buttonToUpper
             // 
-            this.buttonToUpper.Location = new System.Drawing.Point(1023, 123);
+            this.buttonToUpper.Location = new System.Drawing.Point(826, 121);
             this.buttonToUpper.Name = "buttonToUpper";
-            this.buttonToUpper.Size = new System.Drawing.Size(71, 23);
+            this.buttonToUpper.Size = new System.Drawing.Size(67, 23);
             this.buttonToUpper.TabIndex = 24;
             this.buttonToUpper.Text = "ToUpper";
             this.buttonToUpper.UseVisualStyleBackColor = true;
@@ -287,7 +298,7 @@
             // 
             // buttonToLower
             // 
-            this.buttonToLower.Location = new System.Drawing.Point(1114, 123);
+            this.buttonToLower.Location = new System.Drawing.Point(826, 163);
             this.buttonToLower.Name = "buttonToLower";
             this.buttonToLower.Size = new System.Drawing.Size(67, 23);
             this.buttonToLower.TabIndex = 25;
@@ -297,19 +308,137 @@
             // 
             // buttonAbv
             // 
-            this.buttonAbv.Location = new System.Drawing.Point(1023, 171);
+            this.buttonAbv.Location = new System.Drawing.Point(826, 201);
             this.buttonAbv.Name = "buttonAbv";
-            this.buttonAbv.Size = new System.Drawing.Size(71, 23);
+            this.buttonAbv.Size = new System.Drawing.Size(67, 23);
             this.buttonAbv.TabIndex = 26;
             this.buttonAbv.Text = "A b v";
             this.buttonAbv.UseVisualStyleBackColor = true;
             this.buttonAbv.Click += new System.EventHandler(this.buttonAbv_Click);
             // 
+            // buttonRemoveEquals
+            // 
+            this.buttonRemoveEquals.Location = new System.Drawing.Point(826, 524);
+            this.buttonRemoveEquals.Name = "buttonRemoveEquals";
+            this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 23);
+            this.buttonRemoveEquals.TabIndex = 27;
+            this.buttonRemoveEquals.Text = "Remove Equals";
+            this.buttonRemoveEquals.UseVisualStyleBackColor = true;
+            this.buttonRemoveEquals.Click += new System.EventHandler(this.buttonRemoveEquals_Click);
+            // 
+            // textBoxOldSymbol
+            // 
+            this.textBoxOldSymbol.Location = new System.Drawing.Point(830, 576);
+            this.textBoxOldSymbol.Name = "textBoxOldSymbol";
+            this.textBoxOldSymbol.Size = new System.Drawing.Size(51, 20);
+            this.textBoxOldSymbol.TabIndex = 28;
+            // 
+            // buttonReplaceAll
+            // 
+            this.buttonReplaceAll.Location = new System.Drawing.Point(979, 574);
+            this.buttonReplaceAll.Name = "buttonReplaceAll";
+            this.buttonReplaceAll.Size = new System.Drawing.Size(75, 23);
+            this.buttonReplaceAll.TabIndex = 29;
+            this.buttonReplaceAll.Text = "Replace All";
+            this.buttonReplaceAll.UseVisualStyleBackColor = true;
+            this.buttonReplaceAll.Click += new System.EventHandler(this.buttonReplaceAll_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(887, 579);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "With";
+            // 
+            // textBoxNewSymbol
+            // 
+            this.textBoxNewSymbol.Location = new System.Drawing.Point(922, 576);
+            this.textBoxNewSymbol.Name = "textBoxNewSymbol";
+            this.textBoxNewSymbol.Size = new System.Drawing.Size(51, 20);
+            this.textBoxNewSymbol.TabIndex = 31;
+            // 
+            // comboBoxFont
+            // 
+            this.comboBoxFont.FormattingEnabled = true;
+            this.comboBoxFont.Location = new System.Drawing.Point(633, 94);
+            this.comboBoxFont.Name = "comboBoxFont";
+            this.comboBoxFont.Size = new System.Drawing.Size(187, 21);
+            this.comboBoxFont.TabIndex = 32;
+            this.comboBoxFont.SelectedIndexChanged += new System.EventHandler(this.comboBoxFont_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(568, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Font Name";
+            // 
+            // checkBoxAutoSave
+            // 
+            this.checkBoxAutoSave.AutoSize = true;
+            this.checkBoxAutoSave.Location = new System.Drawing.Point(826, 267);
+            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
+            this.checkBoxAutoSave.Size = new System.Drawing.Size(141, 17);
+            this.checkBoxAutoSave.TabIndex = 34;
+            this.checkBoxAutoSave.Text = "Auto Save Current Page";
+            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
+            this.checkBoxAutoSave.CheckedChanged += new System.EventHandler(this.checkBoxAutoSave_CheckedChanged);
+            // 
+            // comboBoxMin
+            // 
+            this.comboBoxMin.FormattingEnabled = true;
+            this.comboBoxMin.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10"});
+            this.comboBoxMin.Location = new System.Drawing.Point(964, 263);
+            this.comboBoxMin.Name = "comboBoxMin";
+            this.comboBoxMin.Size = new System.Drawing.Size(44, 21);
+            this.comboBoxMin.TabIndex = 35;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1014, 268);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Min.";
+            // 
+            // buttonRemovePage
+            // 
+            this.buttonRemovePage.ForeColor = System.Drawing.Color.Red;
+            this.buttonRemovePage.Location = new System.Drawing.Point(903, 432);
+            this.buttonRemovePage.Name = "buttonRemovePage";
+            this.buttonRemovePage.Size = new System.Drawing.Size(105, 23);
+            this.buttonRemovePage.TabIndex = 37;
+            this.buttonRemovePage.Text = "Remove Page";
+            this.buttonRemovePage.UseVisualStyleBackColor = true;
+            this.buttonRemovePage.Click += new System.EventHandler(this.buttonRemovePage_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 803);
+            this.ClientSize = new System.Drawing.Size(1239, 784);
+            this.Controls.Add(this.buttonRemovePage);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBoxMin);
+            this.Controls.Add(this.checkBoxAutoSave);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxFont);
+            this.Controls.Add(this.textBoxNewSymbol);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonReplaceAll);
+            this.Controls.Add(this.textBoxOldSymbol);
+            this.Controls.Add(this.buttonRemoveEquals);
             this.Controls.Add(this.buttonAbv);
             this.Controls.Add(this.buttonToLower);
             this.Controls.Add(this.buttonToUpper);
@@ -372,6 +501,17 @@
         private System.Windows.Forms.Button buttonToUpper;
         private System.Windows.Forms.Button buttonToLower;
         private System.Windows.Forms.Button buttonAbv;
+        private System.Windows.Forms.Button buttonRemoveEquals;
+        private System.Windows.Forms.TextBox textBoxOldSymbol;
+        private System.Windows.Forms.Button buttonReplaceAll;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxNewSymbol;
+        private System.Windows.Forms.ComboBox comboBoxFont;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkBoxAutoSave;
+        private System.Windows.Forms.ComboBox comboBoxMin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonRemovePage;
     }
 }
 
