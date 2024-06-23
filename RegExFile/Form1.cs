@@ -532,7 +532,6 @@ namespace RegExFile
                 comboBoxFont.Items.Add(fontFamily.Name);
             }
         }
-
         private void checkBoxAutoSave_CheckedChanged(object sender, EventArgs e)
         {
             if (richTextBoxFileWindow.Text == "")
