@@ -27,10 +27,11 @@ using System.Windows.Controls;
 using System.Drawing.Text;
 using System.Web.UI.WebControls;
 using static pdftron.PDF.Page;
+using System.Web.WebSockets;
 
 namespace RegExFile
 {
-    public partial  class Form1 : Form
+    public partial class Form1 : Form
     {
         private const char Separator = ' ';
         private static string pathToAddFiles = string.Empty;
@@ -44,12 +45,19 @@ namespace RegExFile
         public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
         private System.Windows.Forms.Timer autosaveTimer;
         private static string extension = string.Empty;
+        public string MyRichTextBox => GetRichTextBoxText();
 
+        //public static string textPassedForm1;
+        //Form1 form1 { get; set; }
+        //PageReadTxt pageReadTxt = new PageReadTxt(pathWithFile[0]);
         public Form1()
         {
             InitializeComponent();
             PopulateFontComboBox(comboBoxFont);
+            //MyRichTextBox = richTextBoxFileWindow;
+
         }
+
         private void textBoxRegEx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -399,16 +407,18 @@ namespace RegExFile
             return richTextBoxFileWindow;
         }
 
-        private void richTextBoxFileWindow_TextChanged(object sender, EventArgs e)
+        public void richTextBoxFileWindow_TextChanged(object sender, EventArgs e)
         {
-            //PageReadTxt pageReadTxt = new PageReadTxt(pathWithFile[0]);
-            //List<string> lsPages = new List<string>();
-            //lsPages = pageReadTxt.GetPages();
-            //int lineNumber = lsPages.Count;
-
-            //Underline underline = new Underline();
-
-
+            //Find find = new Find();
+            ////GetRichTextBoxText();
+            //if (find != null)
+            //{
+            //    richTextBoxFileWindow.Text = find.textBoxReplace.Text;
+            //}
+        }
+        public string GetRichTextBoxText()
+        {
+            return this.richTextBoxFileWindow.Text;
         }
         private void hScrollBarFont_Scroll(object sender, ScrollEventArgs e)
         {
@@ -659,6 +669,24 @@ namespace RegExFile
                 MessageBox.Show("Enter minutes!");
                 return;
             }
+        }
+
+        private void buttonFindForm_Click(object sender, EventArgs e)
+        {
+            //textPassedForm1 = richTextBoxFileWindow.Text;
+
+            Find find = new Find();
+            find.Show();
+        }
+
+        private void textBoxOldSymbol_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNewSymbol_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

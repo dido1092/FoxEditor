@@ -65,20 +65,21 @@
             this.comboBoxMin = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonRemovePage = new System.Windows.Forms.Button();
+            this.buttonFindForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxRegEx
             // 
-            this.textBoxRegEx.Location = new System.Drawing.Point(148, 25);
+            this.textBoxRegEx.Location = new System.Drawing.Point(1123, 700);
             this.textBoxRegEx.Name = "textBoxRegEx";
-            this.textBoxRegEx.Size = new System.Drawing.Size(672, 20);
+            this.textBoxRegEx.Size = new System.Drawing.Size(160, 20);
             this.textBoxRegEx.TabIndex = 0;
             this.textBoxRegEx.TextChanged += new System.EventHandler(this.textBoxRegEx_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(145, 9);
+            this.label1.Location = new System.Drawing.Point(1120, 684);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 13);
             this.label1.TabIndex = 1;
@@ -86,19 +87,19 @@
             // 
             // richTextBoxFileWindow
             // 
-            this.richTextBoxFileWindow.Location = new System.Drawing.Point(36, 121);
+            this.richTextBoxFileWindow.Location = new System.Drawing.Point(36, 151);
             this.richTextBoxFileWindow.Name = "richTextBoxFileWindow";
             this.richTextBoxFileWindow.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBoxFileWindow.Size = new System.Drawing.Size(775, 634);
+            this.richTextBoxFileWindow.Size = new System.Drawing.Size(1051, 589);
             this.richTextBoxFileWindow.TabIndex = 2;
             this.richTextBoxFileWindow.Text = "";
             this.richTextBoxFileWindow.TextChanged += new System.EventHandler(this.richTextBoxFileWindow_TextChanged);
             // 
             // buttonChoiceFile
             // 
-            this.buttonChoiceFile.Location = new System.Drawing.Point(45, 16);
+            this.buttonChoiceFile.Location = new System.Drawing.Point(36, 10);
             this.buttonChoiceFile.Name = "buttonChoiceFile";
-            this.buttonChoiceFile.Size = new System.Drawing.Size(75, 36);
+            this.buttonChoiceFile.Size = new System.Drawing.Size(60, 25);
             this.buttonChoiceFile.TabIndex = 3;
             this.buttonChoiceFile.Text = "Open File";
             this.buttonChoiceFile.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(148, 87);
+            this.buttonPrevious.Location = new System.Drawing.Point(36, 122);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 4;
@@ -116,7 +117,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(422, 87);
+            this.buttonNext.Location = new System.Drawing.Point(375, 122);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 5;
@@ -127,7 +128,7 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(290, 97);
+            this.labelPages.Location = new System.Drawing.Point(191, 127);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(24, 13);
             this.labelPages.TabIndex = 6;
@@ -135,7 +136,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(858, 25);
+            this.buttonStart.Location = new System.Drawing.Point(1123, 726);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(120, 46);
             this.buttonStart.TabIndex = 7;
@@ -145,7 +146,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(1082, 141);
+            this.buttonSave.Location = new System.Drawing.Point(1164, 123);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(96, 29);
             this.buttonSave.TabIndex = 8;
@@ -156,7 +157,7 @@
             // labelDestination
             // 
             this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(33, 762);
+            this.labelDestination.Location = new System.Drawing.Point(33, 743);
             this.labelDestination.Name = "labelDestination";
             this.labelDestination.Size = new System.Drawing.Size(63, 13);
             this.labelDestination.TabIndex = 9;
@@ -164,14 +165,14 @@
             // 
             // textBoxPage
             // 
-            this.textBoxPage.Location = new System.Drawing.Point(276, 60);
+            this.textBoxPage.Location = new System.Drawing.Point(177, 90);
             this.textBoxPage.Name = "textBoxPage";
             this.textBoxPage.Size = new System.Drawing.Size(56, 20);
             this.textBoxPage.TabIndex = 10;
             // 
             // buttonSelectPege
             // 
-            this.buttonSelectPege.Location = new System.Drawing.Point(338, 55);
+            this.buttonSelectPege.Location = new System.Drawing.Point(239, 85);
             this.buttonSelectPege.Name = "buttonSelectPege";
             this.buttonSelectPege.Size = new System.Drawing.Size(75, 28);
             this.buttonSelectPege.TabIndex = 11;
@@ -186,14 +187,14 @@
             "TXT",
             "PDF",
             "DOCX"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(1082, 50);
+            this.comboBoxExtension.Location = new System.Drawing.Point(1164, 32);
             this.comboBoxExtension.Name = "comboBoxExtension";
             this.comboBoxExtension.Size = new System.Drawing.Size(96, 21);
             this.comboBoxExtension.TabIndex = 12;
             // 
             // hScrollBarFont
             // 
-            this.hScrollBarFont.Location = new System.Drawing.Point(708, 67);
+            this.hScrollBarFont.Location = new System.Drawing.Point(527, 10);
             this.hScrollBarFont.Name = "hScrollBarFont";
             this.hScrollBarFont.Size = new System.Drawing.Size(112, 17);
             this.hScrollBarFont.TabIndex = 13;
@@ -203,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(646, 70);
+            this.label2.Location = new System.Drawing.Point(463, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 14;
@@ -212,7 +213,7 @@
             // checkBoxSaveAllPages
             // 
             this.checkBoxSaveAllPages.AutoSize = true;
-            this.checkBoxSaveAllPages.Location = new System.Drawing.Point(1082, 86);
+            this.checkBoxSaveAllPages.Location = new System.Drawing.Point(1164, 68);
             this.checkBoxSaveAllPages.Name = "checkBoxSaveAllPages";
             this.checkBoxSaveAllPages.Size = new System.Drawing.Size(96, 17);
             this.checkBoxSaveAllPages.TabIndex = 15;
@@ -222,14 +223,14 @@
             // 
             // progressBarSaveAllPages
             // 
-            this.progressBarSaveAllPages.Location = new System.Drawing.Point(1082, 176);
+            this.progressBarSaveAllPages.Location = new System.Drawing.Point(1164, 158);
             this.progressBarSaveAllPages.Name = "progressBarSaveAllPages";
             this.progressBarSaveAllPages.Size = new System.Drawing.Size(96, 10);
             this.progressBarSaveAllPages.TabIndex = 16;
             // 
             // buttonRemoveSpaces
             // 
-            this.buttonRemoveSpaces.Location = new System.Drawing.Point(826, 481);
+            this.buttonRemoveSpaces.Location = new System.Drawing.Point(527, 122);
             this.buttonRemoveSpaces.Name = "buttonRemoveSpaces";
             this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 23);
             this.buttonRemoveSpaces.TabIndex = 17;
@@ -240,7 +241,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1079, 34);
+            this.label3.Location = new System.Drawing.Point(1161, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 19;
@@ -248,9 +249,9 @@
             // 
             // buttonRememberText
             // 
-            this.buttonRememberText.Location = new System.Drawing.Point(826, 290);
+            this.buttonRememberText.Location = new System.Drawing.Point(1102, 233);
             this.buttonRememberText.Name = "buttonRememberText";
-            this.buttonRememberText.Size = new System.Drawing.Size(182, 32);
+            this.buttonRememberText.Size = new System.Drawing.Size(158, 32);
             this.buttonRememberText.TabIndex = 20;
             this.buttonRememberText.Text = "Remember Page";
             this.buttonRememberText.UseVisualStyleBackColor = true;
@@ -259,7 +260,7 @@
             // checkBoxRememberText
             // 
             this.checkBoxRememberText.AutoSize = true;
-            this.checkBoxRememberText.Location = new System.Drawing.Point(1082, 118);
+            this.checkBoxRememberText.Location = new System.Drawing.Point(1164, 100);
             this.checkBoxRememberText.Name = "checkBoxRememberText";
             this.checkBoxRememberText.Size = new System.Drawing.Size(136, 17);
             this.checkBoxRememberText.TabIndex = 21;
@@ -269,18 +270,18 @@
             // 
             // textBoxRememberText
             // 
-            this.textBoxRememberText.Location = new System.Drawing.Point(826, 328);
+            this.textBoxRememberText.Location = new System.Drawing.Point(1102, 271);
             this.textBoxRememberText.Multiline = true;
             this.textBoxRememberText.Name = "textBoxRememberText";
             this.textBoxRememberText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxRememberText.Size = new System.Drawing.Size(71, 127);
+            this.textBoxRememberText.Size = new System.Drawing.Size(60, 127);
             this.textBoxRememberText.TabIndex = 22;
             // 
             // buttonLoadRememberPage
             // 
-            this.buttonLoadRememberPage.Location = new System.Drawing.Point(903, 328);
+            this.buttonLoadRememberPage.Location = new System.Drawing.Point(1168, 271);
             this.buttonLoadRememberPage.Name = "buttonLoadRememberPage";
-            this.buttonLoadRememberPage.Size = new System.Drawing.Size(105, 23);
+            this.buttonLoadRememberPage.Size = new System.Drawing.Size(92, 23);
             this.buttonLoadRememberPage.TabIndex = 23;
             this.buttonLoadRememberPage.Text = "Load Page";
             this.buttonLoadRememberPage.UseVisualStyleBackColor = true;
@@ -288,7 +289,7 @@
             // 
             // buttonToUpper
             // 
-            this.buttonToUpper.Location = new System.Drawing.Point(826, 121);
+            this.buttonToUpper.Location = new System.Drawing.Point(239, 10);
             this.buttonToUpper.Name = "buttonToUpper";
             this.buttonToUpper.Size = new System.Drawing.Size(67, 23);
             this.buttonToUpper.TabIndex = 24;
@@ -298,7 +299,7 @@
             // 
             // buttonToLower
             // 
-            this.buttonToLower.Location = new System.Drawing.Point(826, 163);
+            this.buttonToLower.Location = new System.Drawing.Point(312, 10);
             this.buttonToLower.Name = "buttonToLower";
             this.buttonToLower.Size = new System.Drawing.Size(67, 23);
             this.buttonToLower.TabIndex = 25;
@@ -308,7 +309,7 @@
             // 
             // buttonAbv
             // 
-            this.buttonAbv.Location = new System.Drawing.Point(826, 201);
+            this.buttonAbv.Location = new System.Drawing.Point(384, 10);
             this.buttonAbv.Name = "buttonAbv";
             this.buttonAbv.Size = new System.Drawing.Size(67, 23);
             this.buttonAbv.TabIndex = 26;
@@ -318,7 +319,7 @@
             // 
             // buttonRemoveEquals
             // 
-            this.buttonRemoveEquals.Location = new System.Drawing.Point(826, 524);
+            this.buttonRemoveEquals.Location = new System.Drawing.Point(629, 122);
             this.buttonRemoveEquals.Name = "buttonRemoveEquals";
             this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 23);
             this.buttonRemoveEquals.TabIndex = 27;
@@ -328,14 +329,15 @@
             // 
             // textBoxOldSymbol
             // 
-            this.textBoxOldSymbol.Location = new System.Drawing.Point(830, 576);
+            this.textBoxOldSymbol.Location = new System.Drawing.Point(1123, 539);
             this.textBoxOldSymbol.Name = "textBoxOldSymbol";
             this.textBoxOldSymbol.Size = new System.Drawing.Size(51, 20);
             this.textBoxOldSymbol.TabIndex = 28;
+            this.textBoxOldSymbol.TextChanged += new System.EventHandler(this.textBoxOldSymbol_TextChanged);
             // 
             // buttonReplaceAll
             // 
-            this.buttonReplaceAll.Location = new System.Drawing.Point(979, 574);
+            this.buttonReplaceAll.Location = new System.Drawing.Point(1215, 565);
             this.buttonReplaceAll.Name = "buttonReplaceAll";
             this.buttonReplaceAll.Size = new System.Drawing.Size(75, 23);
             this.buttonReplaceAll.TabIndex = 29;
@@ -346,7 +348,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(887, 579);
+            this.label4.Location = new System.Drawing.Point(1180, 542);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 30;
@@ -354,24 +356,25 @@
             // 
             // textBoxNewSymbol
             // 
-            this.textBoxNewSymbol.Location = new System.Drawing.Point(922, 576);
+            this.textBoxNewSymbol.Location = new System.Drawing.Point(1215, 539);
             this.textBoxNewSymbol.Name = "textBoxNewSymbol";
             this.textBoxNewSymbol.Size = new System.Drawing.Size(51, 20);
             this.textBoxNewSymbol.TabIndex = 31;
+            this.textBoxNewSymbol.TextChanged += new System.EventHandler(this.textBoxNewSymbol_TextChanged);
             // 
             // comboBoxFont
             // 
             this.comboBoxFont.FormattingEnabled = true;
-            this.comboBoxFont.Location = new System.Drawing.Point(633, 94);
+            this.comboBoxFont.Location = new System.Drawing.Point(717, 10);
             this.comboBoxFont.Name = "comboBoxFont";
-            this.comboBoxFont.Size = new System.Drawing.Size(187, 21);
+            this.comboBoxFont.Size = new System.Drawing.Size(172, 21);
             this.comboBoxFont.TabIndex = 32;
             this.comboBoxFont.SelectedIndexChanged += new System.EventHandler(this.comboBoxFont_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(568, 97);
+            this.label5.Location = new System.Drawing.Point(652, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 33;
@@ -380,7 +383,7 @@
             // checkBoxAutoSave
             // 
             this.checkBoxAutoSave.AutoSize = true;
-            this.checkBoxAutoSave.Location = new System.Drawing.Point(826, 267);
+            this.checkBoxAutoSave.Location = new System.Drawing.Point(905, 11);
             this.checkBoxAutoSave.Name = "checkBoxAutoSave";
             this.checkBoxAutoSave.Size = new System.Drawing.Size(141, 17);
             this.checkBoxAutoSave.TabIndex = 34;
@@ -398,7 +401,7 @@
             "4",
             "5",
             "10"});
-            this.comboBoxMin.Location = new System.Drawing.Point(964, 263);
+            this.comboBoxMin.Location = new System.Drawing.Point(1043, 7);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(44, 21);
             this.comboBoxMin.TabIndex = 35;
@@ -406,7 +409,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1014, 268);
+            this.label6.Location = new System.Drawing.Point(1093, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 36;
@@ -415,19 +418,30 @@
             // buttonRemovePage
             // 
             this.buttonRemovePage.ForeColor = System.Drawing.Color.Red;
-            this.buttonRemovePage.Location = new System.Drawing.Point(903, 432);
+            this.buttonRemovePage.Location = new System.Drawing.Point(1168, 375);
             this.buttonRemovePage.Name = "buttonRemovePage";
-            this.buttonRemovePage.Size = new System.Drawing.Size(105, 23);
+            this.buttonRemovePage.Size = new System.Drawing.Size(92, 23);
             this.buttonRemovePage.TabIndex = 37;
             this.buttonRemovePage.Text = "Remove Page";
             this.buttonRemovePage.UseVisualStyleBackColor = true;
             this.buttonRemovePage.Click += new System.EventHandler(this.buttonRemovePage_Click);
             // 
+            // buttonFindForm
+            // 
+            this.buttonFindForm.Location = new System.Drawing.Point(116, 10);
+            this.buttonFindForm.Name = "buttonFindForm";
+            this.buttonFindForm.Size = new System.Drawing.Size(60, 25);
+            this.buttonFindForm.TabIndex = 38;
+            this.buttonFindForm.Text = "Find";
+            this.buttonFindForm.UseVisualStyleBackColor = true;
+            this.buttonFindForm.Click += new System.EventHandler(this.buttonFindForm_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 784);
+            this.ClientSize = new System.Drawing.Size(1321, 777);
+            this.Controls.Add(this.buttonFindForm);
             this.Controls.Add(this.buttonRemovePage);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxMin);
@@ -477,7 +491,6 @@
 
         private System.Windows.Forms.TextBox textBoxRegEx;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBoxFileWindow;
         private System.Windows.Forms.Button buttonChoiceFile;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button buttonNext;
@@ -512,6 +525,8 @@
         private System.Windows.Forms.ComboBox comboBoxMin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonRemovePage;
+        private System.Windows.Forms.Button buttonFindForm;
+        public System.Windows.Forms.RichTextBox richTextBoxFileWindow;
     }
 }
 
