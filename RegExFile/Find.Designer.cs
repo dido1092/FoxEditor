@@ -51,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFind3 = new System.Windows.Forms.TextBox();
             this.labelInfo = new System.Windows.Forms.Label();
-            this.checkBoxRegularExpression = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.tabPageReplace.SuspendLayout();
@@ -124,8 +123,9 @@
             this.buttonFindNext.Name = "buttonFindNext";
             this.buttonFindNext.Size = new System.Drawing.Size(124, 23);
             this.buttonFindNext.TabIndex = 0;
-            this.buttonFindNext.Text = "Find Next1";
+            this.buttonFindNext.Text = "Find Next";
             this.buttonFindNext.UseVisualStyleBackColor = true;
+            this.buttonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
             // 
             // tabPageReplace
             // 
@@ -282,22 +282,11 @@
             this.labelInfo.TabIndex = 1;
             this.labelInfo.Text = "Info: ";
             // 
-            // checkBoxRegularExpression
-            // 
-            this.checkBoxRegularExpression.AutoSize = true;
-            this.checkBoxRegularExpression.Location = new System.Drawing.Point(33, 289);
-            this.checkBoxRegularExpression.Name = "checkBoxRegularExpression";
-            this.checkBoxRegularExpression.Size = new System.Drawing.Size(117, 17);
-            this.checkBoxRegularExpression.TabIndex = 2;
-            this.checkBoxRegularExpression.Text = "Regular Expression";
-            this.checkBoxRegularExpression.UseVisualStyleBackColor = true;
-            // 
             // Find
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 349);
-            this.Controls.Add(this.checkBoxRegularExpression);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.tabControl1);
             this.Name = "Find";
@@ -336,7 +325,6 @@
         private System.Windows.Forms.Button buttonClearAllMarks;
         private System.Windows.Forms.Button buttonMarkAll;
         private System.Windows.Forms.Button buttonCopyMarketText;
-        private System.Windows.Forms.CheckBox checkBoxRegularExpression;
         public System.Windows.Forms.TextBox textBoxReplace;
         public System.Windows.Forms.TextBox textBoxFind2;
         public System.Windows.Forms.TextBox textBoxFind1;

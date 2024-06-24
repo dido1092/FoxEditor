@@ -55,10 +55,6 @@
             this.buttonToLower = new System.Windows.Forms.Button();
             this.buttonAbv = new System.Windows.Forms.Button();
             this.buttonRemoveEquals = new System.Windows.Forms.Button();
-            this.textBoxOldSymbol = new System.Windows.Forms.TextBox();
-            this.buttonReplaceAll = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxNewSymbol = new System.Windows.Forms.TextBox();
             this.comboBoxFont = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
@@ -66,20 +62,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonRemovePage = new System.Windows.Forms.Button();
             this.buttonFindForm = new System.Windows.Forms.Button();
+            this.checkBoxForAllDocument = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxRegEx
             // 
-            this.textBoxRegEx.Location = new System.Drawing.Point(1123, 700);
+            this.textBoxRegEx.Location = new System.Drawing.Point(549, 122);
             this.textBoxRegEx.Name = "textBoxRegEx";
-            this.textBoxRegEx.Size = new System.Drawing.Size(160, 20);
+            this.textBoxRegEx.Size = new System.Drawing.Size(207, 20);
             this.textBoxRegEx.TabIndex = 0;
             this.textBoxRegEx.TextChanged += new System.EventHandler(this.textBoxRegEx_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1120, 684);
+            this.label1.Location = new System.Drawing.Point(546, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 13);
             this.label1.TabIndex = 1;
@@ -136,9 +133,9 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(1123, 726);
+            this.buttonStart.Location = new System.Drawing.Point(769, 106);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(120, 46);
+            this.buttonStart.Size = new System.Drawing.Size(91, 34);
             this.buttonStart.TabIndex = 7;
             this.buttonStart.Text = "START";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -230,7 +227,7 @@
             // 
             // buttonRemoveSpaces
             // 
-            this.buttonRemoveSpaces.Location = new System.Drawing.Point(527, 122);
+            this.buttonRemoveSpaces.Location = new System.Drawing.Point(1102, 425);
             this.buttonRemoveSpaces.Name = "buttonRemoveSpaces";
             this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 23);
             this.buttonRemoveSpaces.TabIndex = 17;
@@ -289,7 +286,7 @@
             // 
             // buttonToUpper
             // 
-            this.buttonToUpper.Location = new System.Drawing.Point(239, 10);
+            this.buttonToUpper.Location = new System.Drawing.Point(1102, 530);
             this.buttonToUpper.Name = "buttonToUpper";
             this.buttonToUpper.Size = new System.Drawing.Size(67, 23);
             this.buttonToUpper.TabIndex = 24;
@@ -299,7 +296,7 @@
             // 
             // buttonToLower
             // 
-            this.buttonToLower.Location = new System.Drawing.Point(312, 10);
+            this.buttonToLower.Location = new System.Drawing.Point(1102, 568);
             this.buttonToLower.Name = "buttonToLower";
             this.buttonToLower.Size = new System.Drawing.Size(67, 23);
             this.buttonToLower.TabIndex = 25;
@@ -309,7 +306,7 @@
             // 
             // buttonAbv
             // 
-            this.buttonAbv.Location = new System.Drawing.Point(384, 10);
+            this.buttonAbv.Location = new System.Drawing.Point(1102, 607);
             this.buttonAbv.Name = "buttonAbv";
             this.buttonAbv.Size = new System.Drawing.Size(67, 23);
             this.buttonAbv.TabIndex = 26;
@@ -319,48 +316,13 @@
             // 
             // buttonRemoveEquals
             // 
-            this.buttonRemoveEquals.Location = new System.Drawing.Point(629, 122);
+            this.buttonRemoveEquals.Location = new System.Drawing.Point(1102, 463);
             this.buttonRemoveEquals.Name = "buttonRemoveEquals";
             this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 23);
             this.buttonRemoveEquals.TabIndex = 27;
             this.buttonRemoveEquals.Text = "Remove Equals";
             this.buttonRemoveEquals.UseVisualStyleBackColor = true;
             this.buttonRemoveEquals.Click += new System.EventHandler(this.buttonRemoveEquals_Click);
-            // 
-            // textBoxOldSymbol
-            // 
-            this.textBoxOldSymbol.Location = new System.Drawing.Point(1123, 539);
-            this.textBoxOldSymbol.Name = "textBoxOldSymbol";
-            this.textBoxOldSymbol.Size = new System.Drawing.Size(51, 20);
-            this.textBoxOldSymbol.TabIndex = 28;
-            this.textBoxOldSymbol.TextChanged += new System.EventHandler(this.textBoxOldSymbol_TextChanged);
-            // 
-            // buttonReplaceAll
-            // 
-            this.buttonReplaceAll.Location = new System.Drawing.Point(1215, 565);
-            this.buttonReplaceAll.Name = "buttonReplaceAll";
-            this.buttonReplaceAll.Size = new System.Drawing.Size(75, 23);
-            this.buttonReplaceAll.TabIndex = 29;
-            this.buttonReplaceAll.Text = "Replace All";
-            this.buttonReplaceAll.UseVisualStyleBackColor = true;
-            this.buttonReplaceAll.Click += new System.EventHandler(this.buttonReplaceAll_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1180, 542);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "With";
-            // 
-            // textBoxNewSymbol
-            // 
-            this.textBoxNewSymbol.Location = new System.Drawing.Point(1215, 539);
-            this.textBoxNewSymbol.Name = "textBoxNewSymbol";
-            this.textBoxNewSymbol.Size = new System.Drawing.Size(51, 20);
-            this.textBoxNewSymbol.TabIndex = 31;
-            this.textBoxNewSymbol.TextChanged += new System.EventHandler(this.textBoxNewSymbol_TextChanged);
             // 
             // comboBoxFont
             // 
@@ -428,7 +390,7 @@
             // 
             // buttonFindForm
             // 
-            this.buttonFindForm.Location = new System.Drawing.Point(116, 10);
+            this.buttonFindForm.Location = new System.Drawing.Point(114, 11);
             this.buttonFindForm.Name = "buttonFindForm";
             this.buttonFindForm.Size = new System.Drawing.Size(60, 25);
             this.buttonFindForm.TabIndex = 38;
@@ -436,11 +398,22 @@
             this.buttonFindForm.UseVisualStyleBackColor = true;
             this.buttonFindForm.Click += new System.EventHandler(this.buttonFindForm_Click);
             // 
+            // checkBoxForAllDocument
+            // 
+            this.checkBoxForAllDocument.AutoSize = true;
+            this.checkBoxForAllDocument.Location = new System.Drawing.Point(1102, 507);
+            this.checkBoxForAllDocument.Name = "checkBoxForAllDocument";
+            this.checkBoxForAllDocument.Size = new System.Drawing.Size(107, 17);
+            this.checkBoxForAllDocument.TabIndex = 39;
+            this.checkBoxForAllDocument.Text = "For All Document";
+            this.checkBoxForAllDocument.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 777);
+            this.Controls.Add(this.checkBoxForAllDocument);
             this.Controls.Add(this.buttonFindForm);
             this.Controls.Add(this.buttonRemovePage);
             this.Controls.Add(this.label6);
@@ -448,10 +421,6 @@
             this.Controls.Add(this.checkBoxAutoSave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxFont);
-            this.Controls.Add(this.textBoxNewSymbol);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonReplaceAll);
-            this.Controls.Add(this.textBoxOldSymbol);
             this.Controls.Add(this.buttonRemoveEquals);
             this.Controls.Add(this.buttonAbv);
             this.Controls.Add(this.buttonToLower);
@@ -515,10 +484,6 @@
         private System.Windows.Forms.Button buttonToLower;
         private System.Windows.Forms.Button buttonAbv;
         private System.Windows.Forms.Button buttonRemoveEquals;
-        private System.Windows.Forms.TextBox textBoxOldSymbol;
-        private System.Windows.Forms.Button buttonReplaceAll;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxNewSymbol;
         private System.Windows.Forms.ComboBox comboBoxFont;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBoxAutoSave;
@@ -527,6 +492,7 @@
         private System.Windows.Forms.Button buttonRemovePage;
         private System.Windows.Forms.Button buttonFindForm;
         public System.Windows.Forms.RichTextBox richTextBoxFileWindow;
+        private System.Windows.Forms.CheckBox checkBoxForAllDocument;
     }
 }
 

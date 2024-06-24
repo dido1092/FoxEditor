@@ -33,7 +33,7 @@ namespace RegExFile
                     }
 
                     pageContent.Add(line + "\n");
-                    pageContent.Add("\n");
+                    //pageContent.Add("\n");
                 }
 
                 return pageContent;
