@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.AxHost;
+using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using static iTextSharp.text.pdf.PdfDocument;
@@ -28,6 +29,8 @@ using System.Drawing.Text;
 using System.Web.UI.WebControls;
 using static pdftron.PDF.Page;
 using System.Web.WebSockets;
+using RichTextBox = System.Windows.Forms.RichTextBox;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace RegExFile
 {
@@ -36,30 +39,38 @@ namespace RegExFile
         private const char Separator = ' ';
         private static string pathToAddFiles = string.Empty;
         private static string[] pathWithFile = { };
-        private static int page = 1;
         private static int numPages = 0;
         private static string text = string.Empty;
         private static string name = string.Empty;
         private static string destination = string.Empty;
         private static string createText = string.Empty;
-        public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
         private System.Windows.Forms.Timer autosaveTimer;
-        public static string extension = string.Empty;
-        //public string _myRichTextBox = string.Empty;
-        public string pageContent = string.Empty;
         private List<string> lsGetToUpperContent = new List<string>();
         private List<string> lsGetToLowerContent = new List<string>();
 
-        //public static string textPassedForm1;
-        //Form1 form1 { get; set; }
-        //PageReadTxt pageReadTxt = new PageReadTxt(pathWithFile[0]);
+        public static int page = 1;
+        public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
+        public static string extension = string.Empty;
+        public string pageContent = string.Empty;
+        public string ReceivedData { get; set; }
+        public event System.Action ReloadForm1;
+        public static Form1 instance;
+        public RichTextBox richTBox;
+        //public System.Windows.Forms.TextBox tekstBox;
+
+        public System.Windows.Forms.TextBox txtBox2;
         public Form1()
         {
             InitializeComponent();
             PopulateFontComboBox(comboBoxFont);
+            //ReloadForm1 = new System.Action();
             //MyRichTextBox = richTextBoxFileWindow;
-
+            instance = this;
+            txtBox2 = textBox2;
+            richTBox = richTextBoxFileWindow;
         }
+
+
         //public Form1(string text)
         //{
         //    this._myRichTextBox = text;
@@ -318,7 +329,7 @@ namespace RegExFile
 
                         if (index != 0 && index != -1)
                         {
-                            System.Drawing.Font fnt = new System.Drawing.Font("Verdana", 8F, FontStyle.Bold, GraphicsUnit.Point);
+                            System.Drawing.Font fnt = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, GraphicsUnit.Point);
 
                             richTextBoxFileWindow.Select(index + 1, name.Length);
 
@@ -809,7 +820,7 @@ namespace RegExFile
         private void buttonFindForm_Click(object sender, EventArgs e)
         {
             string textData = richTextBoxFileWindow.Text;
-            Find find = new Find(textData);
+            Find find = new Find(instance, textData);
             find.Show();
         }
 
@@ -819,6 +830,16 @@ namespace RegExFile
         }
 
         private void textBoxNewSymbol_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Find.instance.lab1.Text = textBox2.Text;
+        }
+
+        public void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageFind = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.buttonFindAllinCurrentDocument = new System.Windows.Forms.Button();
             this.buttonCount = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +52,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFind3 = new System.Windows.Forms.TextBox();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.buttonSendToFormTest = new System.Windows.Forms.Button();
+            this.textBoxTest = new System.Windows.Forms.TextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.tabPageReplace.SuspendLayout();
@@ -65,11 +69,12 @@
             this.tabControl1.Location = new System.Drawing.Point(29, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(679, 270);
+            this.tabControl1.Size = new System.Drawing.Size(478, 270);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageFind
             // 
+            this.tabPageFind.Controls.Add(this.label5);
             this.tabPageFind.Controls.Add(this.buttonFindAllinCurrentDocument);
             this.tabPageFind.Controls.Add(this.buttonCount);
             this.tabPageFind.Controls.Add(this.label1);
@@ -78,14 +83,23 @@
             this.tabPageFind.Location = new System.Drawing.Point(4, 22);
             this.tabPageFind.Name = "tabPageFind";
             this.tabPageFind.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFind.Size = new System.Drawing.Size(671, 244);
+            this.tabPageFind.Size = new System.Drawing.Size(470, 244);
             this.tabPageFind.TabIndex = 0;
             this.tabPageFind.Text = "Find";
             this.tabPageFind.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(119, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "label5";
+            // 
             // buttonFindAllinCurrentDocument
             // 
-            this.buttonFindAllinCurrentDocument.Location = new System.Drawing.Point(486, 112);
+            this.buttonFindAllinCurrentDocument.Location = new System.Drawing.Point(280, 111);
             this.buttonFindAllinCurrentDocument.Name = "buttonFindAllinCurrentDocument";
             this.buttonFindAllinCurrentDocument.Size = new System.Drawing.Size(124, 40);
             this.buttonFindAllinCurrentDocument.TabIndex = 7;
@@ -94,7 +108,7 @@
             // 
             // buttonCount
             // 
-            this.buttonCount.Location = new System.Drawing.Point(486, 68);
+            this.buttonCount.Location = new System.Drawing.Point(280, 67);
             this.buttonCount.Name = "buttonCount";
             this.buttonCount.Size = new System.Drawing.Size(124, 23);
             this.buttonCount.TabIndex = 6;
@@ -114,12 +128,12 @@
             // 
             this.textBoxFind1.Location = new System.Drawing.Point(88, 24);
             this.textBoxFind1.Name = "textBoxFind1";
-            this.textBoxFind1.Size = new System.Drawing.Size(359, 20);
+            this.textBoxFind1.Size = new System.Drawing.Size(162, 20);
             this.textBoxFind1.TabIndex = 1;
             // 
             // buttonFindNext
             // 
-            this.buttonFindNext.Location = new System.Drawing.Point(486, 24);
+            this.buttonFindNext.Location = new System.Drawing.Point(280, 23);
             this.buttonFindNext.Name = "buttonFindNext";
             this.buttonFindNext.Size = new System.Drawing.Size(124, 23);
             this.buttonFindNext.TabIndex = 0;
@@ -140,14 +154,14 @@
             this.tabPageReplace.Location = new System.Drawing.Point(4, 22);
             this.tabPageReplace.Name = "tabPageReplace";
             this.tabPageReplace.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReplace.Size = new System.Drawing.Size(671, 244);
+            this.tabPageReplace.Size = new System.Drawing.Size(470, 244);
             this.tabPageReplace.TabIndex = 1;
             this.tabPageReplace.Text = "Replace";
             this.tabPageReplace.UseVisualStyleBackColor = true;
             // 
             // buttonReplaceAllinOpenDocument
             // 
-            this.buttonReplaceAllinOpenDocument.Location = new System.Drawing.Point(489, 178);
+            this.buttonReplaceAllinOpenDocument.Location = new System.Drawing.Point(276, 178);
             this.buttonReplaceAllinOpenDocument.Name = "buttonReplaceAllinOpenDocument";
             this.buttonReplaceAllinOpenDocument.Size = new System.Drawing.Size(123, 37);
             this.buttonReplaceAllinOpenDocument.TabIndex = 14;
@@ -156,7 +170,7 @@
             // 
             // buttonReplaceInCurrentPage
             // 
-            this.buttonReplaceInCurrentPage.Location = new System.Drawing.Point(489, 117);
+            this.buttonReplaceInCurrentPage.Location = new System.Drawing.Point(276, 117);
             this.buttonReplaceInCurrentPage.Name = "buttonReplaceInCurrentPage";
             this.buttonReplaceInCurrentPage.Size = new System.Drawing.Size(123, 43);
             this.buttonReplaceInCurrentPage.TabIndex = 13;
@@ -166,7 +180,7 @@
             // 
             // buttonReplace
             // 
-            this.buttonReplace.Location = new System.Drawing.Point(489, 73);
+            this.buttonReplace.Location = new System.Drawing.Point(276, 76);
             this.buttonReplace.Name = "buttonReplace";
             this.buttonReplace.Size = new System.Drawing.Size(123, 23);
             this.buttonReplace.TabIndex = 12;
@@ -187,8 +201,9 @@
             // 
             this.textBoxReplace.Location = new System.Drawing.Point(91, 73);
             this.textBoxReplace.Name = "textBoxReplace";
-            this.textBoxReplace.Size = new System.Drawing.Size(359, 20);
+            this.textBoxReplace.Size = new System.Drawing.Size(159, 20);
             this.textBoxReplace.TabIndex = 10;
+            this.textBoxReplace.TextChanged += new System.EventHandler(this.textBoxReplace_TextChanged);
             // 
             // label4
             // 
@@ -203,17 +218,18 @@
             // 
             this.textBoxFind2.Location = new System.Drawing.Point(91, 26);
             this.textBoxFind2.Name = "textBoxFind2";
-            this.textBoxFind2.Size = new System.Drawing.Size(359, 20);
+            this.textBoxFind2.Size = new System.Drawing.Size(159, 20);
             this.textBoxFind2.TabIndex = 8;
             // 
             // buttonFindNext2
             // 
-            this.buttonFindNext2.Location = new System.Drawing.Point(489, 26);
+            this.buttonFindNext2.Location = new System.Drawing.Point(276, 29);
             this.buttonFindNext2.Name = "buttonFindNext2";
             this.buttonFindNext2.Size = new System.Drawing.Size(123, 23);
             this.buttonFindNext2.TabIndex = 7;
             this.buttonFindNext2.Text = "Find Next";
             this.buttonFindNext2.UseVisualStyleBackColor = true;
+            this.buttonFindNext2.Click += new System.EventHandler(this.buttonFindNext2_Click);
             // 
             // tabPageMark
             // 
@@ -225,14 +241,14 @@
             this.tabPageMark.Location = new System.Drawing.Point(4, 22);
             this.tabPageMark.Name = "tabPageMark";
             this.tabPageMark.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMark.Size = new System.Drawing.Size(671, 244);
+            this.tabPageMark.Size = new System.Drawing.Size(470, 244);
             this.tabPageMark.TabIndex = 2;
             this.tabPageMark.Text = "Mark";
             this.tabPageMark.UseVisualStyleBackColor = true;
             // 
             // buttonCopyMarketText
             // 
-            this.buttonCopyMarketText.Location = new System.Drawing.Point(478, 125);
+            this.buttonCopyMarketText.Location = new System.Drawing.Point(291, 125);
             this.buttonCopyMarketText.Name = "buttonCopyMarketText";
             this.buttonCopyMarketText.Size = new System.Drawing.Size(117, 23);
             this.buttonCopyMarketText.TabIndex = 7;
@@ -241,7 +257,7 @@
             // 
             // buttonClearAllMarks
             // 
-            this.buttonClearAllMarks.Location = new System.Drawing.Point(478, 72);
+            this.buttonClearAllMarks.Location = new System.Drawing.Point(291, 72);
             this.buttonClearAllMarks.Name = "buttonClearAllMarks";
             this.buttonClearAllMarks.Size = new System.Drawing.Size(117, 23);
             this.buttonClearAllMarks.TabIndex = 6;
@@ -250,7 +266,7 @@
             // 
             // buttonMarkAll
             // 
-            this.buttonMarkAll.Location = new System.Drawing.Point(478, 26);
+            this.buttonMarkAll.Location = new System.Drawing.Point(291, 26);
             this.buttonMarkAll.Name = "buttonMarkAll";
             this.buttonMarkAll.Size = new System.Drawing.Size(117, 23);
             this.buttonMarkAll.TabIndex = 5;
@@ -270,23 +286,55 @@
             // 
             this.textBoxFind3.Location = new System.Drawing.Point(89, 26);
             this.textBoxFind3.Name = "textBoxFind3";
-            this.textBoxFind3.Size = new System.Drawing.Size(359, 20);
+            this.textBoxFind3.Size = new System.Drawing.Size(162, 20);
             this.textBoxFind3.TabIndex = 3;
             // 
             // labelInfo
             // 
             this.labelInfo.AutoSize = true;
-            this.labelInfo.Location = new System.Drawing.Point(26, 318);
+            this.labelInfo.Location = new System.Drawing.Point(26, 289);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(31, 13);
             this.labelInfo.TabIndex = 1;
             this.labelInfo.Text = "Info: ";
             // 
+            // buttonSendToFormTest
+            // 
+            this.buttonSendToFormTest.Location = new System.Drawing.Point(450, 309);
+            this.buttonSendToFormTest.Name = "buttonSendToFormTest";
+            this.buttonSendToFormTest.Size = new System.Drawing.Size(117, 40);
+            this.buttonSendToFormTest.TabIndex = 2;
+            this.buttonSendToFormTest.Text = "Open FormTest";
+            this.buttonSendToFormTest.UseVisualStyleBackColor = true;
+            this.buttonSendToFormTest.Click += new System.EventHandler(this.buttonSendToFormTest_Click);
+            // 
+            // textBoxTest
+            // 
+            this.textBoxTest.Location = new System.Drawing.Point(72, 289);
+            this.textBoxTest.Multiline = true;
+            this.textBoxTest.Name = "textBoxTest";
+            this.textBoxTest.Size = new System.Drawing.Size(171, 40);
+            this.textBoxTest.TabIndex = 3;
+            this.textBoxTest.TextChanged += new System.EventHandler(this.textBoxTest_TextChanged);
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(250, 309);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
+            this.buttonSend.TabIndex = 4;
+            this.buttonSend.Text = "Send to Form Test";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
             // Find
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 349);
+            this.ClientSize = new System.Drawing.Size(579, 361);
+            this.Controls.Add(this.buttonSend);
+            this.Controls.Add(this.textBoxTest);
+            this.Controls.Add(this.buttonSendToFormTest);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.tabControl1);
             this.Name = "Find";
@@ -329,5 +377,9 @@
         public System.Windows.Forms.TextBox textBoxFind2;
         public System.Windows.Forms.TextBox textBoxFind1;
         public System.Windows.Forms.TextBox textBoxFind3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonSendToFormTest;
+        private System.Windows.Forms.Button buttonSend;
+        public System.Windows.Forms.TextBox textBoxTest;
     }
 }

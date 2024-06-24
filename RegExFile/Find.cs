@@ -18,23 +18,34 @@ namespace RegExFile
         public string _text = string.Empty;
         private string name = string.Empty;
         private int index = 0;
+        public static Find instance;
+        public Label lab1;
+        //public TextBox txtBox;
 
-        public Find(string text)
+        //public Find(string text)
+        public Find(Form1 f, string text)
         {
             InitializeComponent();
-            //form1 = new Form1();
+            //form1 = new Form1();        
             this._text = text;
+            instance = this;
+            lab1 = label5;
+            form1 = f;
+            //txtBox = textBoxTest;
         }
 
         public void buttonReplaceInCurrentPage_Click(object sender, EventArgs e)
         {
-            form1.richTextBoxFileWindow.Text = ReplaceInCurrentPage();
-            form1.Show();
+            this._text = form1.richTextBoxFileWindow.Text;
+            ReplaceInCurrentPage(_text);
+
+            form1.richTextBoxFileWindow.Text = ReplaceInCurrentPage(_text);
         }
+
         private void buttonReplace_Click(object sender, EventArgs e)
         {
-            form1.richTextBoxFileWindow.Text = ReplaceNextWord();
-            form1.Show();
+            form1.richTBox.Text = ReplaceNextWord();
+            //form1.Show();
         }
 
         private string ReplaceNextWord()
@@ -55,7 +66,7 @@ namespace RegExFile
             return _text;
         }
 
-        public string ReplaceInCurrentPage()
+        public string ReplaceInCurrentPage(string _text)
         {
             string word = string.Empty;
             string newText = string.Empty;
@@ -81,6 +92,38 @@ namespace RegExFile
         }
 
         private void buttonFindNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSendToFormTest_Click(object sender, EventArgs e)
+        {
+            //FormTest formTest = new FormTest();
+            //formTest.Show();
+
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            //Form1.instance.textBox2.Text = textBoxFind1.Text;
+
+            //FormTest.instance.richTextBoxTest.Text = textBoxTest.Text;
+            form1.richTBox.Text = textBoxTest.Text;
+            form1.textBox2.Text = textBoxTest.Text;
+
+        }
+
+        private void textBoxTest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxReplace_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonFindNext2_Click(object sender, EventArgs e)
         {
 
         }
