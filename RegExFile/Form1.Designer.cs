@@ -96,7 +96,7 @@
             // 
             this.buttonChoiceFile.Location = new System.Drawing.Point(36, 10);
             this.buttonChoiceFile.Name = "buttonChoiceFile";
-            this.buttonChoiceFile.Size = new System.Drawing.Size(60, 25);
+            this.buttonChoiceFile.Size = new System.Drawing.Size(75, 25);
             this.buttonChoiceFile.TabIndex = 3;
             this.buttonChoiceFile.Text = "Open File";
             this.buttonChoiceFile.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             // 
             // buttonToUpper
             // 
-            this.buttonToUpper.Location = new System.Drawing.Point(1102, 530);
+            this.buttonToUpper.Location = new System.Drawing.Point(1102, 549);
             this.buttonToUpper.Name = "buttonToUpper";
             this.buttonToUpper.Size = new System.Drawing.Size(67, 23);
             this.buttonToUpper.TabIndex = 24;
@@ -296,7 +296,7 @@
             // 
             // buttonToLower
             // 
-            this.buttonToLower.Location = new System.Drawing.Point(1102, 568);
+            this.buttonToLower.Location = new System.Drawing.Point(1102, 589);
             this.buttonToLower.Name = "buttonToLower";
             this.buttonToLower.Size = new System.Drawing.Size(67, 23);
             this.buttonToLower.TabIndex = 25;
@@ -306,7 +306,7 @@
             // 
             // buttonAbv
             // 
-            this.buttonAbv.Location = new System.Drawing.Point(1102, 607);
+            this.buttonAbv.Location = new System.Drawing.Point(1102, 629);
             this.buttonAbv.Name = "buttonAbv";
             this.buttonAbv.Size = new System.Drawing.Size(67, 23);
             this.buttonAbv.TabIndex = 26;
@@ -390,9 +390,9 @@
             // 
             // buttonFindForm
             // 
-            this.buttonFindForm.Location = new System.Drawing.Point(114, 11);
+            this.buttonFindForm.Location = new System.Drawing.Point(129, 11);
             this.buttonFindForm.Name = "buttonFindForm";
-            this.buttonFindForm.Size = new System.Drawing.Size(60, 25);
+            this.buttonFindForm.Size = new System.Drawing.Size(71, 25);
             this.buttonFindForm.TabIndex = 38;
             this.buttonFindForm.Text = "Find";
             this.buttonFindForm.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@
             // checkBoxForAllDocument
             // 
             this.checkBoxForAllDocument.AutoSize = true;
-            this.checkBoxForAllDocument.Location = new System.Drawing.Point(1102, 507);
+            this.checkBoxForAllDocument.Location = new System.Drawing.Point(1102, 515);
             this.checkBoxForAllDocument.Name = "checkBoxForAllDocument";
             this.checkBoxForAllDocument.Size = new System.Drawing.Size(107, 17);
             this.checkBoxForAllDocument.TabIndex = 39;
