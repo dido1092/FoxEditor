@@ -45,7 +45,8 @@ namespace RegExFile
         public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
         private System.Windows.Forms.Timer autosaveTimer;
         private static string extension = string.Empty;
-        public string MyRichTextBox => GetRichTextBoxText();
+        //public string _myRichTextBox = string.Empty;
+        public string pageContent = string.Empty;
 
         //public static string textPassedForm1;
         //Form1 form1 { get; set; }
@@ -57,7 +58,26 @@ namespace RegExFile
             //MyRichTextBox = richTextBoxFileWindow;
 
         }
-
+        //public Form1(string text)
+        //{
+        //    this._myRichTextBox = text;
+        //    //richTextBoxFileWindow.Text = "";
+        //    //if (richTextBoxFileWindow.Text == "")
+        //    //{
+        //    //this.richTextBoxFileWindow.Text = text;
+        //    //}
+        //}
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    if (_myRichTextBox != null)
+        //    {
+        //        richTextBoxFileWindow.Text = _myRichTextBox;
+        //    }
+        //    else
+        //    {
+        //        richTextBoxFileWindow.Text = pageContent;
+        //    }
+        //}
         private void textBoxRegEx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -78,9 +98,9 @@ namespace RegExFile
 
             if (pathWithFile[0].Contains(".pdf"))
             {
+                page = 1;
                 extension = "pdf";
                 ReadPdf(pathWithFile[0]);
-
             }
             else if (pathWithFile[0].Contains(".txt"))
             {
@@ -109,7 +129,7 @@ namespace RegExFile
             numPages = reader.NumberOfPages;
 
             ITextExtractionStrategy strategy = new SimpleTextExtractionStrategy();
-            string pageContent = PdfTextExtractor.GetTextFromPage(reader, page, strategy);
+            pageContent = PdfTextExtractor.GetTextFromPage(reader, page, strategy);
 
             richTextBoxFileWindow.Text = ($"\n{pageContent}");
             labelPages.Text = $"{page}/{numPages}";
@@ -185,7 +205,14 @@ namespace RegExFile
             {
                 page = 0;
             }
-            textBoxPage.Text = $"{page + 1}";
+            if (extension == "pdf")
+            {
+                textBoxPage.Text = $"{page}";
+            }
+            else if (extension == "txt")
+            {
+                textBoxPage.Text = $"{page + 1}";
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -207,7 +234,14 @@ namespace RegExFile
             {
                 page = numPages;
             }
-            textBoxPage.Text = $"{page + 1}";
+            if (extension == "pdf")
+            {
+                textBoxPage.Text = $"{page}";
+            }
+            else if (extension == "txt")
+            {
+                textBoxPage.Text = $"{page + 1}";
+            }
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -409,17 +443,9 @@ namespace RegExFile
 
         public void richTextBoxFileWindow_TextChanged(object sender, EventArgs e)
         {
-            //Find find = new Find();
-            ////GetRichTextBoxText();
-            //if (find != null)
-            //{
-            //    richTextBoxFileWindow.Text = find.textBoxReplace.Text;
-            //}
+
         }
-        public string GetRichTextBoxText()
-        {
-            return this.richTextBoxFileWindow.Text;
-        }
+
         private void hScrollBarFont_Scroll(object sender, ScrollEventArgs e)
         {
             // Get the current scrollbar value (e.g., between 6 and maximum)
@@ -673,9 +699,8 @@ namespace RegExFile
 
         private void buttonFindForm_Click(object sender, EventArgs e)
         {
-            //textPassedForm1 = richTextBoxFileWindow.Text;
-
-            Find find = new Find();
+            string textData = richTextBoxFileWindow.Text;
+            Find find = new Find(textData);
             find.Show();
         }
 

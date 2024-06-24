@@ -12,19 +12,24 @@ namespace RegExFile
 {
     public partial class Find : Form
     {
-        Form1 form1;
-        //public static string textPassedFont;
-        private static string text = string.Empty;
+        public string _text = string.Empty;
 
-        public Find()
+        public Find(string text)
         {
             InitializeComponent();
-            form1 = new Form1();
+            //form1 = new Form1();
+            this._text = text;
         }
 
         public void buttonReplaceInCurrentPage_Click(object sender, EventArgs e)
         {
-            AccessRichTextBoxText();
+            Form1 form1 = new Form1();
+            form1.richTextBoxFileWindow.Text = AccessRichTextBoxText();
+            form1.Show();
+        }
+        private void buttonReplace_Click(object sender, EventArgs e)
+        {
+
         }
         public string AccessRichTextBoxText()
         {
@@ -32,14 +37,12 @@ namespace RegExFile
             string newText = string.Empty;
             string oldSymbol = textBoxFind2.Text.Replace(" ", "");
             string newSymbol = textBoxReplace.Text.Replace(" ", "");
-            
-            text = form1.GetRichTextBoxText();
 
             if (oldSymbol.Length == 1 && newSymbol.Length == 1)
             {
                 //string allText = text;
 
-                string[] words = text.Split(' ');
+                string[] words = _text.Split(' ');
 
                 for (int i = 0; i < words.Length; i++)
                 {
@@ -54,7 +57,6 @@ namespace RegExFile
                         newText += word + " ";
                     }
                 }
-                //return newText;
             }
             else
             {
@@ -62,5 +64,7 @@ namespace RegExFile
             }
             return newText;
         }
+
+
     }
 }
