@@ -38,35 +38,32 @@ namespace RegExFile
     {
         private const char Separator = ' ';
         private static string pathToAddFiles = string.Empty;
-        private static string[] pathWithFile = { };
         private static int numPages = 0;
         private static string text = string.Empty;
         private static string name = string.Empty;
         private static string destination = string.Empty;
         private static string createText = string.Empty;
         private System.Windows.Forms.Timer autosaveTimer;
-        private List<string> lsGetToUpperContent = new List<string>();
-        private List<string> lsGetToLowerContent = new List<string>();
 
+        public List<string> lsGetToUpperContent = new List<string>();
+        public List<string> lsGetToLowerContent = new List<string>();
+        public string[] pathWithFile = { };
         public static int page = 1;
         public static HashSet<RememberText> hsRememberText = new HashSet<RememberText>();
         public static string extension = string.Empty;
         public string pageContent = string.Empty;
         public string ReceivedData { get; set; }
         public event System.Action ReloadForm1;
+        
         public static Form1 instance;
         //public RichTextBox richTBox;
-        //public System.Windows.Forms.TextBox tekstBox;
 
-        public System.Windows.Forms.TextBox txtBox2;
         public Form1()
         {
             InitializeComponent();
             PopulateFontComboBox(comboBoxFont);
-            //ReloadForm1 = new System.Action();
-            //MyRichTextBox = richTextBoxFileWindow;
             instance = this;
-            //richTBox = richTextBoxFileWindow;
+
         }
 
 
@@ -194,7 +191,7 @@ namespace RegExFile
             labelPages.Text = $"{page}/{numPages / 40}";
         }
 
-        private void DisplayPages(int pageSize, List<string> lsContent, int count)
+        public string DisplayPages(int pageSize, List<string> lsContent, int count)
         {
             for (int line = page * pageSize; line < numPages; line++)
             {
@@ -218,6 +215,7 @@ namespace RegExFile
 
                 count++;
             }
+            return richTextBoxFileWindow.Text;
         }
 
         private static OpenFileDialog OpenFile()
@@ -839,6 +837,18 @@ namespace RegExFile
         }
 
         public void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExtra1_Click(object sender, EventArgs e)
+        {
+            //string textData = richTextBoxFileWindow.Text;
+            FrmExtra1 frmExtra1 = new FrmExtra1(instance);
+            frmExtra1.Show();
+        }
+
+        private void checkBoxForAllDocument_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -45,13 +45,13 @@
             this.textBoxFind2 = new System.Windows.Forms.TextBox();
             this.buttonFindNext2 = new System.Windows.Forms.Button();
             this.tabPageMark = new System.Windows.Forms.TabPage();
+            this.buttonMarkInAllDocument = new System.Windows.Forms.Button();
             this.buttonCopyMarketText = new System.Windows.Forms.Button();
             this.buttonClearAllMarks = new System.Windows.Forms.Button();
             this.buttonMarkInCurrentPage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFind3 = new System.Windows.Forms.TextBox();
             this.labelInfo = new System.Windows.Forms.Label();
-            this.buttonMarkInAllDocument = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.tabPageReplace.SuspendLayout();
@@ -234,6 +234,15 @@
             this.tabPageMark.Text = "Mark";
             this.tabPageMark.UseVisualStyleBackColor = true;
             // 
+            // buttonMarkInAllDocument
+            // 
+            this.buttonMarkInAllDocument.Location = new System.Drawing.Point(291, 73);
+            this.buttonMarkInAllDocument.Name = "buttonMarkInAllDocument";
+            this.buttonMarkInAllDocument.Size = new System.Drawing.Size(117, 23);
+            this.buttonMarkInAllDocument.TabIndex = 8;
+            this.buttonMarkInAllDocument.Text = "Mark In All Document";
+            this.buttonMarkInAllDocument.UseVisualStyleBackColor = true;
+            // 
             // buttonCopyMarketText
             // 
             this.buttonCopyMarketText.Location = new System.Drawing.Point(291, 167);
@@ -286,15 +295,6 @@
             this.labelInfo.TabIndex = 1;
             this.labelInfo.Text = "Info: ";
             // 
-            // buttonMarkInAllDocument
-            // 
-            this.buttonMarkInAllDocument.Location = new System.Drawing.Point(291, 73);
-            this.buttonMarkInAllDocument.Name = "buttonMarkInAllDocument";
-            this.buttonMarkInAllDocument.Size = new System.Drawing.Size(117, 23);
-            this.buttonMarkInAllDocument.TabIndex = 8;
-            this.buttonMarkInAllDocument.Text = "Mark In All Document";
-            this.buttonMarkInAllDocument.UseVisualStyleBackColor = true;
-            // 
             // Find
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +305,7 @@
             this.Name = "Find";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Find";
+            this.Load += new System.EventHandler(this.Find_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageFind.ResumeLayout(false);
             this.tabPageFind.PerformLayout();

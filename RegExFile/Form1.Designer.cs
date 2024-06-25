@@ -63,6 +63,7 @@
             this.buttonRemovePage = new System.Windows.Forms.Button();
             this.buttonFindForm = new System.Windows.Forms.Button();
             this.checkBoxForAllDocument = new System.Windows.Forms.CheckBox();
+            this.buttonExtra1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxRegEx
@@ -87,7 +88,7 @@
             this.richTextBoxFileWindow.Location = new System.Drawing.Point(36, 151);
             this.richTextBoxFileWindow.Name = "richTextBoxFileWindow";
             this.richTextBoxFileWindow.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBoxFileWindow.Size = new System.Drawing.Size(1051, 589);
+            this.richTextBoxFileWindow.Size = new System.Drawing.Size(1051, 570);
             this.richTextBoxFileWindow.TabIndex = 2;
             this.richTextBoxFileWindow.Text = "";
             this.richTextBoxFileWindow.TextChanged += new System.EventHandler(this.richTextBoxFileWindow_TextChanged);
@@ -154,7 +155,7 @@
             // labelDestination
             // 
             this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(33, 743);
+            this.labelDestination.Location = new System.Drawing.Point(33, 724);
             this.labelDestination.Name = "labelDestination";
             this.labelDestination.Size = new System.Drawing.Size(63, 13);
             this.labelDestination.TabIndex = 9;
@@ -227,9 +228,9 @@
             // 
             // buttonRemoveSpaces
             // 
-            this.buttonRemoveSpaces.Location = new System.Drawing.Point(1102, 425);
+            this.buttonRemoveSpaces.Location = new System.Drawing.Point(1102, 420);
             this.buttonRemoveSpaces.Name = "buttonRemoveSpaces";
-            this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 23);
+            this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 28);
             this.buttonRemoveSpaces.TabIndex = 17;
             this.buttonRemoveSpaces.Text = "Remove Spaces";
             this.buttonRemoveSpaces.UseVisualStyleBackColor = true;
@@ -288,7 +289,7 @@
             // 
             this.buttonToUpper.Location = new System.Drawing.Point(1102, 549);
             this.buttonToUpper.Name = "buttonToUpper";
-            this.buttonToUpper.Size = new System.Drawing.Size(67, 23);
+            this.buttonToUpper.Size = new System.Drawing.Size(83, 27);
             this.buttonToUpper.TabIndex = 24;
             this.buttonToUpper.Text = "ToUpper";
             this.buttonToUpper.UseVisualStyleBackColor = true;
@@ -296,9 +297,9 @@
             // 
             // buttonToLower
             // 
-            this.buttonToLower.Location = new System.Drawing.Point(1102, 589);
+            this.buttonToLower.Location = new System.Drawing.Point(1102, 591);
             this.buttonToLower.Name = "buttonToLower";
-            this.buttonToLower.Size = new System.Drawing.Size(67, 23);
+            this.buttonToLower.Size = new System.Drawing.Size(83, 27);
             this.buttonToLower.TabIndex = 25;
             this.buttonToLower.Text = "ToLower";
             this.buttonToLower.UseVisualStyleBackColor = true;
@@ -306,9 +307,9 @@
             // 
             // buttonAbv
             // 
-            this.buttonAbv.Location = new System.Drawing.Point(1102, 629);
+            this.buttonAbv.Location = new System.Drawing.Point(1102, 633);
             this.buttonAbv.Name = "buttonAbv";
-            this.buttonAbv.Size = new System.Drawing.Size(67, 23);
+            this.buttonAbv.Size = new System.Drawing.Size(83, 27);
             this.buttonAbv.TabIndex = 26;
             this.buttonAbv.Text = "A b v";
             this.buttonAbv.UseVisualStyleBackColor = true;
@@ -316,9 +317,9 @@
             // 
             // buttonRemoveEquals
             // 
-            this.buttonRemoveEquals.Location = new System.Drawing.Point(1102, 463);
+            this.buttonRemoveEquals.Location = new System.Drawing.Point(1102, 465);
             this.buttonRemoveEquals.Name = "buttonRemoveEquals";
-            this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 23);
+            this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 28);
             this.buttonRemoveEquals.TabIndex = 27;
             this.buttonRemoveEquals.Text = "Remove Equals";
             this.buttonRemoveEquals.UseVisualStyleBackColor = true;
@@ -407,12 +408,24 @@
             this.checkBoxForAllDocument.TabIndex = 39;
             this.checkBoxForAllDocument.Text = "For All Document";
             this.checkBoxForAllDocument.UseVisualStyleBackColor = true;
+            this.checkBoxForAllDocument.CheckedChanged += new System.EventHandler(this.checkBoxForAllDocument_CheckedChanged);
+            // 
+            // buttonExtra1
+            // 
+            this.buttonExtra1.Location = new System.Drawing.Point(221, 13);
+            this.buttonExtra1.Name = "buttonExtra1";
+            this.buttonExtra1.Size = new System.Drawing.Size(71, 23);
+            this.buttonExtra1.TabIndex = 40;
+            this.buttonExtra1.Text = "Extra1";
+            this.buttonExtra1.UseVisualStyleBackColor = true;
+            this.buttonExtra1.Click += new System.EventHandler(this.buttonExtra1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 777);
+            this.ClientSize = new System.Drawing.Size(1363, 753);
+            this.Controls.Add(this.buttonExtra1);
             this.Controls.Add(this.checkBoxForAllDocument);
             this.Controls.Add(this.buttonFindForm);
             this.Controls.Add(this.buttonRemovePage);
@@ -493,6 +506,7 @@
         private System.Windows.Forms.Button buttonFindForm;
         private System.Windows.Forms.CheckBox checkBoxForAllDocument;
         public System.Windows.Forms.RichTextBox richTextBoxFileWindow;
+        private System.Windows.Forms.Button buttonExtra1;
     }
 }
 

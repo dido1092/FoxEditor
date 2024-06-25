@@ -15,19 +15,28 @@ namespace RegExFile
     public partial class Find : Form
     {
         public static Find instance;
-        private static Form1 form1 = new Form1();
+        public static Form1 form1;
         public string _text = string.Empty;
         private string name = string.Empty;
         private int index = 0;
 
         public Find(Form1 f, string text)
         {
-            InitializeComponent();  
+            InitializeComponent();
             this._text = text;
             instance = this;
             form1 = f;
         }
-
+        private void Find_Load(object sender, EventArgs e)
+        {
+            instance.TopMost = true;
+        }
+        private void buttonReplace_Click(object sender, EventArgs e)
+        {
+            this._text = form1.richTextBoxFileWindow.Text;
+            ReplaceNextWord(_text);
+            form1.richTextBoxFileWindow.Text = ReplaceNextWord(_text);
+        }
         public void buttonReplaceInCurrentPage_Click(object sender, EventArgs e)
         {
             this._text = form1.richTextBoxFileWindow.Text;
@@ -35,12 +44,6 @@ namespace RegExFile
             form1.richTextBoxFileWindow.Text = ReplaceInCurrentPage(_text);
         }
 
-        private void buttonReplace_Click(object sender, EventArgs e)
-        {
-            this._text = form1.richTextBoxFileWindow.Text;
-            ReplaceNextWord(_text);
-            form1.richTextBoxFileWindow.Text = ReplaceNextWord(_text);
-        }
 
         private string ReplaceNextWord(string _text)
         {
@@ -55,7 +58,8 @@ namespace RegExFile
                 words = _text.Split(' ');
                 int index = Array.IndexOf(words, oldSymbol);
                 words[index] = newSymbol;
-                return _text = string.Join(" ", words);
+                //return _text = string.Join(" ", words);
+                return string.Join(" ", words);
             }
             return _text;
         }
@@ -86,10 +90,6 @@ namespace RegExFile
         }
 
         private void buttonFindNext_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBoxTest_TextChanged(object sender, EventArgs e)
         {
 
         }
