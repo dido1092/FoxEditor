@@ -55,7 +55,7 @@ namespace RegExFile
         public string ReceivedData { get; set; }
         public event System.Action ReloadForm1;
         public static Form1 instance;
-        public RichTextBox richTBox;
+        //public RichTextBox richTBox;
         //public System.Windows.Forms.TextBox tekstBox;
 
         public System.Windows.Forms.TextBox txtBox2;
@@ -66,8 +66,7 @@ namespace RegExFile
             //ReloadForm1 = new System.Action();
             //MyRichTextBox = richTextBoxFileWindow;
             instance = this;
-            txtBox2 = textBox2;
-            richTBox = richTextBoxFileWindow;
+            //richTBox = richTextBoxFileWindow;
         }
 
 
@@ -836,7 +835,7 @@ namespace RegExFile
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Find.instance.lab1.Text = textBox2.Text;
+
         }
 
         public void textBox2_TextChanged(object sender, EventArgs e)

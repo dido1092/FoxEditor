@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageFind = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
             this.buttonFindAllinCurrentDocument = new System.Windows.Forms.Button();
             this.buttonCount = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,13 +47,11 @@
             this.tabPageMark = new System.Windows.Forms.TabPage();
             this.buttonCopyMarketText = new System.Windows.Forms.Button();
             this.buttonClearAllMarks = new System.Windows.Forms.Button();
-            this.buttonMarkAll = new System.Windows.Forms.Button();
+            this.buttonMarkInCurrentPage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFind3 = new System.Windows.Forms.TextBox();
             this.labelInfo = new System.Windows.Forms.Label();
-            this.buttonSendToFormTest = new System.Windows.Forms.Button();
-            this.textBoxTest = new System.Windows.Forms.TextBox();
-            this.buttonSend = new System.Windows.Forms.Button();
+            this.buttonMarkInAllDocument = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.tabPageReplace.SuspendLayout();
@@ -74,7 +71,6 @@
             // 
             // tabPageFind
             // 
-            this.tabPageFind.Controls.Add(this.label5);
             this.tabPageFind.Controls.Add(this.buttonFindAllinCurrentDocument);
             this.tabPageFind.Controls.Add(this.buttonCount);
             this.tabPageFind.Controls.Add(this.label1);
@@ -87,15 +83,6 @@
             this.tabPageFind.TabIndex = 0;
             this.tabPageFind.Text = "Find";
             this.tabPageFind.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(119, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
             // 
             // buttonFindAllinCurrentDocument
             // 
@@ -233,9 +220,10 @@
             // 
             // tabPageMark
             // 
+            this.tabPageMark.Controls.Add(this.buttonMarkInAllDocument);
             this.tabPageMark.Controls.Add(this.buttonCopyMarketText);
             this.tabPageMark.Controls.Add(this.buttonClearAllMarks);
-            this.tabPageMark.Controls.Add(this.buttonMarkAll);
+            this.tabPageMark.Controls.Add(this.buttonMarkInCurrentPage);
             this.tabPageMark.Controls.Add(this.label2);
             this.tabPageMark.Controls.Add(this.textBoxFind3);
             this.tabPageMark.Location = new System.Drawing.Point(4, 22);
@@ -248,7 +236,7 @@
             // 
             // buttonCopyMarketText
             // 
-            this.buttonCopyMarketText.Location = new System.Drawing.Point(291, 125);
+            this.buttonCopyMarketText.Location = new System.Drawing.Point(291, 167);
             this.buttonCopyMarketText.Name = "buttonCopyMarketText";
             this.buttonCopyMarketText.Size = new System.Drawing.Size(117, 23);
             this.buttonCopyMarketText.TabIndex = 7;
@@ -257,21 +245,21 @@
             // 
             // buttonClearAllMarks
             // 
-            this.buttonClearAllMarks.Location = new System.Drawing.Point(291, 72);
+            this.buttonClearAllMarks.Location = new System.Drawing.Point(291, 122);
             this.buttonClearAllMarks.Name = "buttonClearAllMarks";
             this.buttonClearAllMarks.Size = new System.Drawing.Size(117, 23);
             this.buttonClearAllMarks.TabIndex = 6;
             this.buttonClearAllMarks.Text = "Clear all marks";
             this.buttonClearAllMarks.UseVisualStyleBackColor = true;
             // 
-            // buttonMarkAll
+            // buttonMarkInCurrentPage
             // 
-            this.buttonMarkAll.Location = new System.Drawing.Point(291, 26);
-            this.buttonMarkAll.Name = "buttonMarkAll";
-            this.buttonMarkAll.Size = new System.Drawing.Size(117, 23);
-            this.buttonMarkAll.TabIndex = 5;
-            this.buttonMarkAll.Text = "Mark All";
-            this.buttonMarkAll.UseVisualStyleBackColor = true;
+            this.buttonMarkInCurrentPage.Location = new System.Drawing.Point(291, 26);
+            this.buttonMarkInCurrentPage.Name = "buttonMarkInCurrentPage";
+            this.buttonMarkInCurrentPage.Size = new System.Drawing.Size(117, 23);
+            this.buttonMarkInCurrentPage.TabIndex = 5;
+            this.buttonMarkInCurrentPage.Text = "Mark In Current Page";
+            this.buttonMarkInCurrentPage.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -298,43 +286,20 @@
             this.labelInfo.TabIndex = 1;
             this.labelInfo.Text = "Info: ";
             // 
-            // buttonSendToFormTest
+            // buttonMarkInAllDocument
             // 
-            this.buttonSendToFormTest.Location = new System.Drawing.Point(450, 309);
-            this.buttonSendToFormTest.Name = "buttonSendToFormTest";
-            this.buttonSendToFormTest.Size = new System.Drawing.Size(117, 40);
-            this.buttonSendToFormTest.TabIndex = 2;
-            this.buttonSendToFormTest.Text = "Open FormTest";
-            this.buttonSendToFormTest.UseVisualStyleBackColor = true;
-            this.buttonSendToFormTest.Click += new System.EventHandler(this.buttonSendToFormTest_Click);
-            // 
-            // textBoxTest
-            // 
-            this.textBoxTest.Location = new System.Drawing.Point(72, 289);
-            this.textBoxTest.Multiline = true;
-            this.textBoxTest.Name = "textBoxTest";
-            this.textBoxTest.Size = new System.Drawing.Size(171, 40);
-            this.textBoxTest.TabIndex = 3;
-            this.textBoxTest.TextChanged += new System.EventHandler(this.textBoxTest_TextChanged);
-            // 
-            // buttonSend
-            // 
-            this.buttonSend.Location = new System.Drawing.Point(250, 309);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(75, 23);
-            this.buttonSend.TabIndex = 4;
-            this.buttonSend.Text = "Send to Form Test";
-            this.buttonSend.UseVisualStyleBackColor = true;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            this.buttonMarkInAllDocument.Location = new System.Drawing.Point(291, 73);
+            this.buttonMarkInAllDocument.Name = "buttonMarkInAllDocument";
+            this.buttonMarkInAllDocument.Size = new System.Drawing.Size(117, 23);
+            this.buttonMarkInAllDocument.TabIndex = 8;
+            this.buttonMarkInAllDocument.Text = "Mark In All Document";
+            this.buttonMarkInAllDocument.UseVisualStyleBackColor = true;
             // 
             // Find
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 361);
-            this.Controls.Add(this.buttonSend);
-            this.Controls.Add(this.textBoxTest);
-            this.Controls.Add(this.buttonSendToFormTest);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.tabControl1);
             this.Name = "Find";
@@ -371,15 +336,12 @@
         private System.Windows.Forms.TabPage tabPageMark;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClearAllMarks;
-        private System.Windows.Forms.Button buttonMarkAll;
+        private System.Windows.Forms.Button buttonMarkInCurrentPage;
         private System.Windows.Forms.Button buttonCopyMarketText;
         public System.Windows.Forms.TextBox textBoxReplace;
         public System.Windows.Forms.TextBox textBoxFind2;
         public System.Windows.Forms.TextBox textBoxFind1;
         public System.Windows.Forms.TextBox textBoxFind3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonSendToFormTest;
-        private System.Windows.Forms.Button buttonSend;
-        public System.Windows.Forms.TextBox textBoxTest;
+        private System.Windows.Forms.Button buttonMarkInAllDocument;
     }
 }
