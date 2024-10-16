@@ -1,10 +1,12 @@
 ﻿using iTextSharp.text;
+using SixLabors.ImageSharp.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,15 +15,32 @@ namespace RegExFile
 {
     public partial class FrmExtra1 : Form
     {
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(ref System.Drawing.Point lpPoint);
+
         public static FrmExtra1 instance;
-        public static Form1 form1 = new Form1();
-        private static List<string> lsContent = new List<string>();
-        public FrmExtra1(Form1 inst)
+        public static Form1 form1;
+        private static List<string> lsContent;
+        private RichTextBox richTBox;
+        private string[] pathWithFile = { };
+        private int getCharIndexPosition;
+        //private static extern bool GetCursorPos(ref System.Drawing.Point lpPoint);
+
+        public FrmExtra1(Form1 inst, RichTextBox richText, string[] pathWithFileFromForm1, int getCharIndexFromPosition)
         {
             InitializeComponent();
 
             instance = this;
+            form1 = new Form1();
             form1 = inst;
+            lsContent = new List<string>();
+            //richTBoxTex = new RichTextBox();
+            richTBox = richText;
+            this.pathWithFile = pathWithFileFromForm1;
+            getCharIndexPosition = getCharIndexFromPosition;
+
+            //buttonToUpper.Click += buttonToUpper_Click;
+            //buttonToLower.Click += buttonToLower_Click;
         }
         public FrmExtra1()
         {
@@ -29,33 +48,65 @@ namespace RegExFile
         }
         private void FrmExtra1_Load(object sender, EventArgs e)//Stay Form duration working with another form
         {
-            instance.TopMost = true;
+            //instance.TopMost = true;
+            instance.Focus();
         }
         private void buttonToUpper_Click(object sender, EventArgs e)
         {
-            form1.richTextBoxFileWindow.Text = ToUpper();
+            if (richTBox.SelectedText != "")
+            {
+                //richTBox.Text = ToUpper(richTBox.SelectedText);
+                ToUpper(richTBox.SelectedText);
+
+                form1.labelItems.Text = $"Items: {form1.lsGetToUpperContent.Count}";
+
+                checkBoxSelectAllInPage.Checked = false;
+            }
         }
         private void buttonToLower_Click(object sender, EventArgs e)
         {
-            form1.richTextBoxFileWindow.Text = ToLower();
+            if (richTBox.SelectedText != "")
+            {
+                //richTBox.Text = ToLower(richTBox.SelectedText);
+                ToLower(richTBox.SelectedText);
+
+                form1.labelItems.Text = $"Items: {form1.lsGetToUpperContent.Count}";
+
+                checkBoxSelectAllInPage.Checked = false;
+            }
         }
-        private string ToUpper()
+        private void buttonAbc_Click(object sender, EventArgs e)
+        {
+            //Abc(form1.richTextBoxFileWindow.Text);
+            if (richTBox.SelectedText != "")
+            {
+                //richTBox.Text = Abc(richTBox.Text, richTBox.SelectedText);
+                Abc(richTBox.Text, richTBox.SelectedText);
+                form1.labelItems.Text = $"Items: {form1.lsGetToLowerContent.Count}";
+
+                //checkBoxForAllDocument.Checked = false;
+                checkBoxSelectAllInPage.Checked = false;
+            }
+        }
+        private void ToUpper(string selectedText)
         {
             string toUpper = string.Empty;
 
-            if (form1.richTextBoxFileWindow.SelectedText != "")
+            if (selectedText != "")
             {
-                string selectedText = form1.richTextBoxFileWindow.SelectedText;
+                //string selectedText = form1.richTextBoxFileWindow.SelectedText;
 
                 if (this.checkBoxForAllDocument.Checked)
                 {
                     toUpper = FillToUpper();
-                    form1.richTextBoxFileWindow.Text = toUpper.ToUpper();
+
+                    richTBox.Text = toUpper;
                 }
                 else
                 {
                     //return form1.richTextBoxFileWindow.Text = selectedText;
-                    return form1.richTextBoxFileWindow.Text.Replace(selectedText, selectedText.ToUpper());
+                    //return richTBox.Text.Replace(selectedText, selectedText.ToUpper());
+                    richTBox.SelectedText = richTBox.SelectedText.Replace(selectedText, selectedText.ToUpper());
                 }
             }
             else
@@ -63,43 +114,64 @@ namespace RegExFile
                 MessageBox.Show("Select Text Please!");
             }
             checkBoxForAllDocument.Checked = false;
-            return string.Join(" ", form1.richTextBoxFileWindow.Text = toUpper.ToUpper());// toUpper);// form1.lsGetToUpperContent); 
+
+            //return string.Join(" ", richTBox.Text = toUpper);// toUpper);// form1.lsGetToUpperContent); 
 
         }
-        private string ToLower()
+        public void LowerSelectedString(RichTextBox richTextBox)
+        {
+            if (richTBox.SelectedText.Length > 0)
+            {
+                int startIndex = richTBox.SelectionStart;
+                int length = richTBox.SelectionLength;
+
+                // Get the original text and lowercase the selected portion
+                string originalText = richTBox.Text;
+                string loweredText = originalText.Substring(startIndex, length).ToLower();
+
+                // Replace the selected text with the lowered version
+                richTBox.Text = originalText.Remove(startIndex, length).Insert(startIndex, loweredText);
+
+                // Restore selection to the lowered text
+                richTextBox.Select(startIndex, loweredText.Length);
+            }
+        }
+        private void ToLower(string selectedText)
         {
             string toLower = string.Empty;
 
-            if (form1.richTextBoxFileWindow.SelectedText != "")
+            if (selectedText != "")
             {
-                string selectedText = form1.richTextBoxFileWindow.SelectedText;
-
                 if (checkBoxForAllDocument.Checked)
                 {
                     toLower = FillToLower();
-                    form1.richTextBoxFileWindow.Text = toLower.ToLower();
-                    //DisplayPages(pageSize, lsGetToUpperContent, count);
+
+                    richTBox.Text = toLower;
                 }
                 else
                 {
-                    return form1.richTextBoxFileWindow.Text.Replace(selectedText, selectedText.ToLower());
+                    //return richTBox.Text.Replace(selectedText, selectedText.ToLower());
+                    richTBox.SelectedText = richTBox.SelectedText.Replace(selectedText, selectedText.ToLower());
                 }
+
             }
             else
             {
                 MessageBox.Show("Select Text Please!");
             }
             checkBoxForAllDocument.Checked = false;
-            return string.Join(" ", form1.richTextBoxFileWindow.Text = toLower.ToLower());// toLower);// form1.lsGetToLowerContent);
+
+            //return string.Join(" ", richTBox.Text = toLower);// toLower);// form1.lsGetToLowerContent);
+            //string.Join(" ", richTBox.Text = toLower);// toLower);// form1.lsGetToLowerContent);
         }
-        private static string FillToUpper()
+        private string FillToUpper()
         {
-            //int pageSize = 40;
-            //int count = 0;
-
             form1.richTextBoxFileWindow.Text = "";
+            form1.lsGetToUpperContent.Clear();
 
-            var reader = new PageReadTxt(form1.pathWithFile[0]);
+            //string path = pathWithFile;// form1.GetPath();
+
+            PageReadTxt reader = new PageReadTxt(pathWithFile[0]);
 
             lsContent = reader.GetPages();
 
@@ -107,56 +179,69 @@ namespace RegExFile
             {
                 form1.lsGetToUpperContent.Add(page.ToString().ToUpper());
             }
-            return string.Join(" ", form1.lsGetToUpperContent);
+            return string.Join("", form1.lsGetToUpperContent);
         }
-
-
-
-        private static string FillToLower()
+        private string FillToLower()
         {
-            //int pageSize = 40;
-            //int count = 0;
-
             form1.richTextBoxFileWindow.Text = "";
+            form1.lsGetToLowerContent.Clear();
 
-            var reader = new PageReadTxt(form1.pathWithFile[0]);
+            //string path = pathWithFile;// form1.GetPath();
+
+            PageReadTxt reader = new PageReadTxt(pathWithFile[0]);
+
             List<string> lsContent = new List<string>();
             lsContent = reader.GetPages();
 
             foreach (var page in lsContent)
             {
-                form1.lsGetToLowerContent.Add(page.ToString().ToLower());
+                form1.lsGetToLowerContent.Add(page.ToString());
             }
-            return string.Join(" ", lsContent);// form1.lsGetToLowerContent);
+            return string.Join("", lsContent);// form1.lsGetToLowerContent);
         }
 
-        private void buttonAbc_Click(object sender, EventArgs e)
-        {
-            //Abc(form1.richTextBoxFileWindow.Text);
-            form1.richTextBoxFileWindow.Text = Abc(form1.richTextBoxFileWindow.SelectedText);
-        }
 
-        private string Abc(string selectedWord)
+
+        private void Abc(string getText, string selectedText)
         {
-            string text = FillToLower();
-            string[] arrText = text.Split(' ');
+            //string text = FillToLower();
+            string text = string.Empty;
+            string[] arrText = { };
             string getWord = string.Empty;
             string newWord = string.Empty;
 
             if (checkBoxForAllDocument.Checked)
             {
                 //string word = form1.richTextBoxFileWindow.SelectedText;
+                text = FillToLower();
+                arrText = text.Split('\n', ' ');
 
                 for (int i = 0; i < arrText.Length; i++)
                 {
-                    getWord = arrText[i].Replace("\n", "");//First letter toUpper
+                    getWord = arrText[i].ToString();//First letter toUpper
 
-                    //for (int j = 0; j < getWord.Length; j++)
-                    //{
-                    newWord += getWord[0].ToString().ToUpper();
-                    //}
-                    if (getWord.Length > 1)
+                    if (getWord.Length > 0)
                     {
+                        newWord += getWord[0].ToString().ToUpper();
+                        newWord += getWord.Substring(1, getWord.Length - 1).ToLower() + "\n";//Other letters toLower
+                    }
+                    else
+                    {
+                        newWord += "\n";
+                    }
+                }
+            }
+            else if (checkBoxSelectAllInPage.Checked)
+            {
+                arrText = selectedText.Split('\n');
+
+                for (int i = 0; i < arrText.Length; i++)
+                {
+                    getWord = arrText[i];//First letter toUpper
+
+                    if (getWord.Length > 0)
+                    {
+                        newWord += getWord[0].ToString().ToUpper();
                         newWord += getWord.Substring(1, getWord.Length - 1).ToLower() + "\n";//Other letters toLower
                     }
                     else
@@ -167,37 +252,191 @@ namespace RegExFile
             }
             else
             {
-                if (selectedWord != "")
+                if (getText != "")
                 {
-                    string word = selectedWord;// form1.richTextBoxFileWindow.SelectedText;
+                    //string word = form1.richTextBoxFileWindow.SelectedText;
 
-                    newWord = word[0].ToString().ToUpper();//First letter toUpper
-                    newWord += word.Substring(1, word.Length - 1).ToLower();//Other letters toLower
+                    newWord = selectedText[0].ToString().ToUpper();//First letter toUpper
+                    newWord += selectedText.Substring(1, selectedText.Length - 1).ToLower();//Other letters toLower
 
-                    newWord = form1.richTextBoxFileWindow.Text.Replace(selectedWord, newWord);// form1.richTextBoxFileWindow.Text.Replace(getText, newWord);
+                    //form1.richTextBoxFileWindow.Text.Replace(selectedText, newWord);
                 }
                 else
                 {
                     MessageBox.Show("Select Text Please!");
                 }
-                checkBoxForAllDocument.Checked = false;
-                return newWord;
+                string newText = getText.Replace(selectedText, newWord);
+
+                //return newText;
 
             }
             checkBoxForAllDocument.Checked = false;
-            return form1.richTextBoxFileWindow.SelectedText = newWord;
+
+            richTBox.SelectedText = newWord;
         }
 
-        private void checkBoxForAllDocument_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxForAllDocument_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (checkBoxForAllDocument.Checked)
+            checkBoxForAllDoc();
+        }
+        public bool checkBoxForAllDoc()
+        {
+            if (checkBoxForAllDocument?.Checked != null)
             {
-                Form1.instance.richTextBoxFileWindow.SelectAll();
-                Form1.instance.richTextBoxFileWindow.SelectionColor = Color.RoyalBlue;
+                checkBoxSelectAllInPage.Checked = false;
+
+                richTBox.SelectAll();
+                richTBox.SelectionColor = Color.RoyalBlue;
+            }
+            if (checkBoxForAllDocument?.Checked == false)
+            {
+                richTBox.SelectionColor = Color.Black;
+            }
+
+            return true;
+        }
+
+        private void checkBoxSelectAllInPage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSelectAllInPage?.Checked != null)
+            {
+                checkBoxForAllDocument.Checked = false;
+
+                richTBox.SelectAll();
+                richTBox.SelectionColor = Color.RoyalBlue;
+            }
+            if (checkBoxSelectAllInPage?.Checked == false)
+            {
+                richTBox.SelectionColor = Color.Black;
+            }
+        }
+
+        private void buttonRemoveSpaces_Click(object sender, EventArgs e)
+        {
+            if (richTBox.SelectedText != "")
+            {
+                //string[] removeSpaces = richTBoxTex.SelectedText.Split(' ');
+                //string newWord = string.Empty;
+                //for (int i = 0; i < removeSpaces.Length; i++)
+                //{
+                //    newWord += removeSpaces[i].Replace(" ", "");
+                //}
+                //richTBoxTex.SelectedText = newWord;
+                string removeSpaces = richTBox.SelectedText;
+                string newWord = string.Empty;
+
+                newWord = removeSpaces.Replace(" ", "");
+
+                richTBox.SelectedText = newWord;
             }
             else
             {
-                Form1.instance.richTextBoxFileWindow.SelectionColor = Color.Black;
+                MessageBox.Show("Select Text Please!");
+            }
+        }
+
+        private void buttonRemoveEquals_Click(object sender, EventArgs e)
+        {
+            //string[] arrText = richTBox.Text.Split();
+            //char[] symbols = richTBox.SelectedText.ToCharArray();
+            string getSelectedText = richTBox.SelectedText;
+
+            if (getSelectedText.Length > 0)
+            {
+                //string allText = richTBox.Text;
+                //richTBox.Text = "";
+                //string text = string.Empty;
+
+                //if (getSelectedText.Length == 1)
+                //{
+                //for (int i = 0; i < allText.Length; i++)
+                //{
+                //    for (int j = 0; j < symbols.Length; j++)
+                //    {
+                //        if (allText[i] != symbols[j])
+                //        {
+                //            text += allText[i];
+                //        }
+                //    }
+                //}
+                //allText = allText.Replace(getSelectedText, "");
+
+                //===================================================
+                //string removeSpaces = richTBox.SelectedText;
+                //string newWord = string.Empty;
+
+                //newWord = removeSpaces.Replace(" ", "");
+
+                //richTBox.SelectedText = newWord;
+                //===================================================
+
+                //richTBox.SelectAll();
+
+                //int index = richTBox.Text.IndexOf(getSelectedText);
+                int cursorIndex = richTBox.SelectionStart;
+
+
+
+                string newText = richTBox.Text.Replace(getSelectedText, "");
+                //richTBox.Text = "";
+                richTBox.Text = newText;
+
+                //==================================================================
+                //int charIndex = richTBox.GetCharIndexFromPosition(e.Location);
+
+                //// Get the line number from the character index
+                //int lineNumber = richTBox.GetLineFromCharIndex(cursorIndex);
+
+                //// Get the starting index of the clicked line
+                //int lineStart = richTBox.GetFirstCharIndexFromLine(lineNumber);
+
+                //// Get the starting index of the next line
+                //int lineEnd = (lineNumber + 1 < richTBox.Lines.Length) ?
+                //    richTBox.GetFirstCharIndexFromLine(lineNumber + 1) :
+                //    richTBox.TextLength;
+
+                //// Calculate the length of the line
+                //int lineLength = lineEnd - lineStart;
+                //==================================================================
+
+
+                richTBox.SelectionStart = cursorIndex;// + lineLength;
+
+
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Select One Symbol!");
+                //}
+            }
+            else
+            {
+                MessageBox.Show("Select Text Please!");
+            }
+        }
+
+
+        private void buttonIsCyrillic_Click(object sender, EventArgs e)
+        {
+            string letter = richTBox.SelectedText;
+
+            if (letter.Length == 1)
+            {
+                decimal decimalNumber = letter[0];
+
+
+                if (decimalNumber >= 1040 && decimalNumber <= 1103)
+                {
+                    labelInfo.Text = $"Info: '{letter[0]}' - Is Cyrillic";
+                }
+                else
+                {
+                    labelInfo.Text = $"Info: '{letter[0]}' - Not Cyrillic";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select One Letter!");
             }
         }
 

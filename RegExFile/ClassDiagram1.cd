@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RegExFile.BgWords" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAABAAAAAAAQAAAAAAQAAAAA=</HashCode>
+      <FileName>BgWords.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.DbConfig" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>DbConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.DocPageContent" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocPageContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.EnWords" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAABAAAAAEAQAAAAAAAAAAAA=</HashCode>
+      <FileName>EnWords.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.EnWordsTranscript" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAABAAAAAEAQAAQAAAAAAAAA=</HashCode>
+      <FileName>EnWordsTranscript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FindedWord" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>FindedWord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Form1" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>O5sDDv8DOqAUopM91PPJPHgT1TrH2nsJSC8iLTXEUEU=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSet" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAwAAAAJABAAAQAAAAAgDQBgAAAAAQAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSet1" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAwIAAAJABAAAQAAAAAgCQBgAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmBgDB" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAUCAAgEUCBACFQAIACAAAoKBBEAAcAAgEAIQIAAhAA=</HashCode>
+      <FileName>FrmBgDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmConvertLetters" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAAACAAABAAAQCASAADIAAAAAEAAAAAAAQCACA=</HashCode>
+      <FileName>FrmConvertLetters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmDatabase" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBGAAAAgChAIAAAAACAAAASAAAAAEGAAQAAAAABAAA=</HashCode>
+      <FileName>FrmDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmEnDB" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUCACgEUCBACFQAKACAAAoDAAEAAcAAAAAMQIAAhAA=</HashCode>
+      <FileName>FrmEnDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmExport" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAACAWBFMAAACARCACIABAKAEAACAAAAAQEAA=</HashCode>
+      <FileName>FrmExport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmExtra1" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgSQBAACAyAAOAgCCEBAIOICBACCEgAAAAIQiAAAA=</HashCode>
+      <FileName>FrmExtra1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmFind" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQSAAIQiAAABgIAIiJACWjNAVEBAEACVCIKQABBgg=</HashCode>
+      <FileName>FrmFind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmFont" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAQAACAAABAAAACAAABCIABAAAAIAAAAAAAQABA=</HashCode>
+      <FileName>FrmFont.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmLines" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgACAAABAAAACBAAACAAJAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrmLines.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FrmPdf_FindPages" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAQAAIACAQABAEECCAAAEjIABCIEEIACAAgCBAAAA=</HashCode>
+      <FileName>FrmPdf_FindPages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.IndexesCheckSpelling" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>IndexesCheckSpelling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.MarkText" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>MarkText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.PageReadTxt" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>PageReadTxt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.PdfPageContent" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PdfPageContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Program" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.RegExFileContext" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RegExFileContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.RememberText" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAACAAAAAAIAAAAAACAAAAAA=</HashCode>
+      <FileName>RememberText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSetTableAdapters.BgWordsTableAdapter" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMAAgAAACiAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSet1TableAdapters.EnWordsTableAdapter" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.FoxTextEditorDataSet1TableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMAAgAAQCwAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.GetId.GetBgWordId" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>GetId\GetBgWordId.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineNumbers.LineNumbers_For_RichTextBox" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QmqaIFAAAkFDwAkEQ6whCZBkEhApEwCQiIqITIEHgLY=</HashCode>
+      <FileName>linenum_rtf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Migrations.InitialMigration" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Migrations\20240715144323_InitialMigration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Migrations.AddNewTableEnWordTranscript" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Migrations\20240717073720_AddNewTableEnWordTranscript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Migrations.RegExFileContextModelSnapshot" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Migrations\RegExFileContextModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAABAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegExFile.Properties.Settings" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABABAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -28,86 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxRegEx = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBoxFileWindow = new System.Windows.Forms.RichTextBox();
-            this.buttonChoiceFile = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.labelPages = new System.Windows.Forms.Label();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.labelDestination = new System.Windows.Forms.Label();
             this.textBoxPage = new System.Windows.Forms.TextBox();
             this.buttonSelectPege = new System.Windows.Forms.Button();
-            this.comboBoxExtension = new System.Windows.Forms.ComboBox();
-            this.hScrollBarFont = new System.Windows.Forms.HScrollBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxSaveAllPages = new System.Windows.Forms.CheckBox();
-            this.progressBarSaveAllPages = new System.Windows.Forms.ProgressBar();
-            this.buttonRemoveSpaces = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonRememberText = new System.Windows.Forms.Button();
-            this.checkBoxRememberText = new System.Windows.Forms.CheckBox();
             this.textBoxRememberText = new System.Windows.Forms.TextBox();
             this.buttonLoadRememberPage = new System.Windows.Forms.Button();
-            this.buttonToUpper = new System.Windows.Forms.Button();
-            this.buttonToLower = new System.Windows.Forms.Button();
-            this.buttonAbv = new System.Windows.Forms.Button();
-            this.buttonRemoveEquals = new System.Windows.Forms.Button();
-            this.comboBoxFont = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
-            this.comboBoxMin = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.buttonRemovePage = new System.Windows.Forms.Button();
-            this.buttonFindForm = new System.Windows.Forms.Button();
-            this.checkBoxForAllDocument = new System.Windows.Forms.CheckBox();
-            this.buttonExtra1 = new System.Windows.Forms.Button();
+            this.labelAutoSave = new System.Windows.Forms.Label();
+            this.labelItems = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonConvertLetters = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExtra1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonFont = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonExtractImages = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonPrint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.labelPathToExport = new System.Windows.Forms.Label();
+            this.checkBoxSaveInCurrentDocument = new System.Windows.Forms.CheckBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.comboBoxAutoSaveForm1 = new System.Windows.Forms.ComboBox();
+            this.checkBoxAutoSaveForm1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxCheckSpelling = new System.Windows.Forms.CheckBox();
+            this.buttonYes = new System.Windows.Forms.Button();
+            this.comboBoxTollerance = new System.Windows.Forms.ComboBox();
+            this.richTextBoxSpelling = new System.Windows.Forms.RichTextBox();
+            this.labelSpellingInfo = new System.Windows.Forms.Label();
+            this.buttonInsertWordIntoDB = new System.Windows.Forms.Button();
+            this.buttonConvertToBgCyrillic = new System.Windows.Forms.Button();
+            this.buttonComb3Buttons = new System.Windows.Forms.Button();
+            this.buttonSkip = new System.Windows.Forms.Button();
+            this.buttonPreviousCheckWord = new System.Windows.Forms.Button();
+            this.progressBarDoc = new System.Windows.Forms.ProgressBar();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.checkBoxCut = new System.Windows.Forms.CheckBox();
+            this.textBoxFromPage = new System.Windows.Forms.TextBox();
+            this.textBoxToPage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lineNumbers_For_RichTextBox1 = new LineNumbers.LineNumbers_For_RichTextBox();
+            this.labelLibraryStatus = new System.Windows.Forms.Label();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBoxRegEx
-            // 
-            this.textBoxRegEx.Location = new System.Drawing.Point(549, 122);
-            this.textBoxRegEx.Name = "textBoxRegEx";
-            this.textBoxRegEx.Size = new System.Drawing.Size(207, 20);
-            this.textBoxRegEx.TabIndex = 0;
-            this.textBoxRegEx.TextChanged += new System.EventHandler(this.textBoxRegEx_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(546, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Regular Expression (Mark Unique Symbols)";
             // 
             // richTextBoxFileWindow
             // 
+            this.richTextBoxFileWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBoxFileWindow.Location = new System.Drawing.Point(36, 151);
             this.richTextBoxFileWindow.Name = "richTextBoxFileWindow";
             this.richTextBoxFileWindow.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBoxFileWindow.Size = new System.Drawing.Size(1051, 570);
+            this.richTextBoxFileWindow.Size = new System.Drawing.Size(949, 571);
             this.richTextBoxFileWindow.TabIndex = 2;
             this.richTextBoxFileWindow.Text = "";
+            this.richTextBoxFileWindow.CursorChanged += new System.EventHandler(this.richTextBoxFileWindow_TextChanged);
             this.richTextBoxFileWindow.TextChanged += new System.EventHandler(this.richTextBoxFileWindow_TextChanged);
-            // 
-            // buttonChoiceFile
-            // 
-            this.buttonChoiceFile.Location = new System.Drawing.Point(36, 10);
-            this.buttonChoiceFile.Name = "buttonChoiceFile";
-            this.buttonChoiceFile.Size = new System.Drawing.Size(75, 25);
-            this.buttonChoiceFile.TabIndex = 3;
-            this.buttonChoiceFile.Text = "Open File";
-            this.buttonChoiceFile.UseVisualStyleBackColor = true;
-            this.buttonChoiceFile.Click += new System.EventHandler(this.buttonChoiceFile_Click);
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(36, 122);
+            this.buttonPrevious.Location = new System.Drawing.Point(304, 122);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrevious.Size = new System.Drawing.Size(81, 21);
             this.buttonPrevious.TabIndex = 4;
             this.buttonPrevious.Text = "<<";
             this.buttonPrevious.UseVisualStyleBackColor = true;
@@ -115,9 +116,9 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(375, 122);
+            this.buttonNext.Location = new System.Drawing.Point(542, 122);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
+            this.buttonNext.Size = new System.Drawing.Size(81, 21);
             this.buttonNext.TabIndex = 5;
             this.buttonNext.Text = ">>";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -126,387 +127,680 @@
             // labelPages
             // 
             this.labelPages.AutoSize = true;
-            this.labelPages.Location = new System.Drawing.Point(191, 127);
+            this.labelPages.Location = new System.Drawing.Point(441, 130);
             this.labelPages.Name = "labelPages";
             this.labelPages.Size = new System.Drawing.Size(24, 13);
             this.labelPages.TabIndex = 6;
             this.labelPages.Text = "0/0";
             // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(769, 106);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(91, 34);
-            this.buttonStart.TabIndex = 7;
-            this.buttonStart.Text = "START";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(1164, 123);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(96, 29);
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "EXPORT TO";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
             // labelDestination
             // 
             this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(33, 724);
+            this.labelDestination.Location = new System.Drawing.Point(33, 746);
             this.labelDestination.Name = "labelDestination";
             this.labelDestination.Size = new System.Drawing.Size(63, 13);
             this.labelDestination.TabIndex = 9;
             this.labelDestination.Text = "Destination:";
+            this.labelDestination.Click += new System.EventHandler(this.labelDestination_Click);
             // 
             // textBoxPage
             // 
-            this.textBoxPage.Location = new System.Drawing.Point(177, 90);
+            this.textBoxPage.Location = new System.Drawing.Point(421, 97);
             this.textBoxPage.Name = "textBoxPage";
-            this.textBoxPage.Size = new System.Drawing.Size(56, 20);
+            this.textBoxPage.Size = new System.Drawing.Size(72, 20);
             this.textBoxPage.TabIndex = 10;
+            this.textBoxPage.TextChanged += new System.EventHandler(this.textBoxPage_TextChanged);
             // 
             // buttonSelectPege
             // 
-            this.buttonSelectPege.Location = new System.Drawing.Point(239, 85);
+            this.buttonSelectPege.Location = new System.Drawing.Point(499, 93);
             this.buttonSelectPege.Name = "buttonSelectPege";
-            this.buttonSelectPege.Size = new System.Drawing.Size(75, 28);
+            this.buttonSelectPege.Size = new System.Drawing.Size(85, 26);
             this.buttonSelectPege.TabIndex = 11;
             this.buttonSelectPege.Text = "Select Page";
             this.buttonSelectPege.UseVisualStyleBackColor = true;
             this.buttonSelectPege.Click += new System.EventHandler(this.buttonSelectPege_Click);
             // 
-            // comboBoxExtension
-            // 
-            this.comboBoxExtension.FormattingEnabled = true;
-            this.comboBoxExtension.Items.AddRange(new object[] {
-            "TXT",
-            "PDF",
-            "DOCX"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(1164, 32);
-            this.comboBoxExtension.Name = "comboBoxExtension";
-            this.comboBoxExtension.Size = new System.Drawing.Size(96, 21);
-            this.comboBoxExtension.TabIndex = 12;
-            // 
-            // hScrollBarFont
-            // 
-            this.hScrollBarFont.Location = new System.Drawing.Point(527, 10);
-            this.hScrollBarFont.Name = "hScrollBarFont";
-            this.hScrollBarFont.Size = new System.Drawing.Size(112, 17);
-            this.hScrollBarFont.TabIndex = 13;
-            this.hScrollBarFont.Value = 5;
-            this.hScrollBarFont.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarFont_Scroll);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(463, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Font Size";
-            // 
-            // checkBoxSaveAllPages
-            // 
-            this.checkBoxSaveAllPages.AutoSize = true;
-            this.checkBoxSaveAllPages.Location = new System.Drawing.Point(1164, 68);
-            this.checkBoxSaveAllPages.Name = "checkBoxSaveAllPages";
-            this.checkBoxSaveAllPages.Size = new System.Drawing.Size(96, 17);
-            this.checkBoxSaveAllPages.TabIndex = 15;
-            this.checkBoxSaveAllPages.Text = "Save all pages";
-            this.checkBoxSaveAllPages.UseVisualStyleBackColor = true;
-            this.checkBoxSaveAllPages.CheckedChanged += new System.EventHandler(this.checkBoxSaveAllPages_CheckedChanged);
-            // 
-            // progressBarSaveAllPages
-            // 
-            this.progressBarSaveAllPages.Location = new System.Drawing.Point(1164, 158);
-            this.progressBarSaveAllPages.Name = "progressBarSaveAllPages";
-            this.progressBarSaveAllPages.Size = new System.Drawing.Size(96, 10);
-            this.progressBarSaveAllPages.TabIndex = 16;
-            // 
-            // buttonRemoveSpaces
-            // 
-            this.buttonRemoveSpaces.Location = new System.Drawing.Point(1102, 420);
-            this.buttonRemoveSpaces.Name = "buttonRemoveSpaces";
-            this.buttonRemoveSpaces.Size = new System.Drawing.Size(96, 28);
-            this.buttonRemoveSpaces.TabIndex = 17;
-            this.buttonRemoveSpaces.Text = "Remove Spaces";
-            this.buttonRemoveSpaces.UseVisualStyleBackColor = true;
-            this.buttonRemoveSpaces.Click += new System.EventHandler(this.buttonRemoveSpaces_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1161, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Extensions";
-            // 
             // buttonRememberText
             // 
-            this.buttonRememberText.Location = new System.Drawing.Point(1102, 233);
+            this.buttonRememberText.Location = new System.Drawing.Point(994, 264);
             this.buttonRememberText.Name = "buttonRememberText";
-            this.buttonRememberText.Size = new System.Drawing.Size(158, 32);
+            this.buttonRememberText.Size = new System.Drawing.Size(187, 30);
             this.buttonRememberText.TabIndex = 20;
             this.buttonRememberText.Text = "Remember Page";
             this.buttonRememberText.UseVisualStyleBackColor = true;
             this.buttonRememberText.Click += new System.EventHandler(this.buttonRememberText_Click_1);
             // 
-            // checkBoxRememberText
-            // 
-            this.checkBoxRememberText.AutoSize = true;
-            this.checkBoxRememberText.Location = new System.Drawing.Point(1164, 100);
-            this.checkBoxRememberText.Name = "checkBoxRememberText";
-            this.checkBoxRememberText.Size = new System.Drawing.Size(136, 17);
-            this.checkBoxRememberText.TabIndex = 21;
-            this.checkBoxRememberText.Text = "From Remember Pages";
-            this.checkBoxRememberText.UseVisualStyleBackColor = true;
-            this.checkBoxRememberText.CheckedChanged += new System.EventHandler(this.checkBoxRememberText_CheckedChanged);
-            // 
             // textBoxRememberText
             // 
-            this.textBoxRememberText.Location = new System.Drawing.Point(1102, 271);
+            this.textBoxRememberText.Location = new System.Drawing.Point(994, 302);
             this.textBoxRememberText.Multiline = true;
             this.textBoxRememberText.Name = "textBoxRememberText";
             this.textBoxRememberText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxRememberText.Size = new System.Drawing.Size(60, 127);
+            this.textBoxRememberText.Size = new System.Drawing.Size(66, 125);
             this.textBoxRememberText.TabIndex = 22;
             // 
             // buttonLoadRememberPage
             // 
-            this.buttonLoadRememberPage.Location = new System.Drawing.Point(1168, 271);
+            this.buttonLoadRememberPage.Location = new System.Drawing.Point(1060, 302);
             this.buttonLoadRememberPage.Name = "buttonLoadRememberPage";
-            this.buttonLoadRememberPage.Size = new System.Drawing.Size(92, 23);
+            this.buttonLoadRememberPage.Size = new System.Drawing.Size(121, 29);
             this.buttonLoadRememberPage.TabIndex = 23;
             this.buttonLoadRememberPage.Text = "Load Page";
             this.buttonLoadRememberPage.UseVisualStyleBackColor = true;
             this.buttonLoadRememberPage.Click += new System.EventHandler(this.buttonLoadRememberPage_Click);
             // 
-            // buttonToUpper
-            // 
-            this.buttonToUpper.Location = new System.Drawing.Point(1102, 549);
-            this.buttonToUpper.Name = "buttonToUpper";
-            this.buttonToUpper.Size = new System.Drawing.Size(83, 27);
-            this.buttonToUpper.TabIndex = 24;
-            this.buttonToUpper.Text = "ToUpper";
-            this.buttonToUpper.UseVisualStyleBackColor = true;
-            this.buttonToUpper.Click += new System.EventHandler(this.buttonToUpper_Click);
-            // 
-            // buttonToLower
-            // 
-            this.buttonToLower.Location = new System.Drawing.Point(1102, 591);
-            this.buttonToLower.Name = "buttonToLower";
-            this.buttonToLower.Size = new System.Drawing.Size(83, 27);
-            this.buttonToLower.TabIndex = 25;
-            this.buttonToLower.Text = "ToLower";
-            this.buttonToLower.UseVisualStyleBackColor = true;
-            this.buttonToLower.Click += new System.EventHandler(this.buttonToLower_Click);
-            // 
-            // buttonAbv
-            // 
-            this.buttonAbv.Location = new System.Drawing.Point(1102, 633);
-            this.buttonAbv.Name = "buttonAbv";
-            this.buttonAbv.Size = new System.Drawing.Size(83, 27);
-            this.buttonAbv.TabIndex = 26;
-            this.buttonAbv.Text = "A b v";
-            this.buttonAbv.UseVisualStyleBackColor = true;
-            this.buttonAbv.Click += new System.EventHandler(this.buttonAbv_Click);
-            // 
-            // buttonRemoveEquals
-            // 
-            this.buttonRemoveEquals.Location = new System.Drawing.Point(1102, 465);
-            this.buttonRemoveEquals.Name = "buttonRemoveEquals";
-            this.buttonRemoveEquals.Size = new System.Drawing.Size(96, 28);
-            this.buttonRemoveEquals.TabIndex = 27;
-            this.buttonRemoveEquals.Text = "Remove Equals";
-            this.buttonRemoveEquals.UseVisualStyleBackColor = true;
-            this.buttonRemoveEquals.Click += new System.EventHandler(this.buttonRemoveEquals_Click);
-            // 
-            // comboBoxFont
-            // 
-            this.comboBoxFont.FormattingEnabled = true;
-            this.comboBoxFont.Location = new System.Drawing.Point(717, 10);
-            this.comboBoxFont.Name = "comboBoxFont";
-            this.comboBoxFont.Size = new System.Drawing.Size(172, 21);
-            this.comboBoxFont.TabIndex = 32;
-            this.comboBoxFont.SelectedIndexChanged += new System.EventHandler(this.comboBoxFont_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(652, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Font Name";
-            // 
-            // checkBoxAutoSave
-            // 
-            this.checkBoxAutoSave.AutoSize = true;
-            this.checkBoxAutoSave.Location = new System.Drawing.Point(905, 11);
-            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
-            this.checkBoxAutoSave.Size = new System.Drawing.Size(141, 17);
-            this.checkBoxAutoSave.TabIndex = 34;
-            this.checkBoxAutoSave.Text = "Auto Save Current Page";
-            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
-            this.checkBoxAutoSave.CheckedChanged += new System.EventHandler(this.checkBoxAutoSave_CheckedChanged);
-            // 
-            // comboBoxMin
-            // 
-            this.comboBoxMin.FormattingEnabled = true;
-            this.comboBoxMin.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "10"});
-            this.comboBoxMin.Location = new System.Drawing.Point(1043, 7);
-            this.comboBoxMin.Name = "comboBoxMin";
-            this.comboBoxMin.Size = new System.Drawing.Size(44, 21);
-            this.comboBoxMin.TabIndex = 35;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1093, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Min.";
-            // 
             // buttonRemovePage
             // 
-            this.buttonRemovePage.ForeColor = System.Drawing.Color.Red;
-            this.buttonRemovePage.Location = new System.Drawing.Point(1168, 375);
+            this.buttonRemovePage.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonRemovePage.Location = new System.Drawing.Point(1060, 398);
             this.buttonRemovePage.Name = "buttonRemovePage";
-            this.buttonRemovePage.Size = new System.Drawing.Size(92, 23);
+            this.buttonRemovePage.Size = new System.Drawing.Size(121, 29);
             this.buttonRemovePage.TabIndex = 37;
             this.buttonRemovePage.Text = "Remove Page";
             this.buttonRemovePage.UseVisualStyleBackColor = true;
             this.buttonRemovePage.Click += new System.EventHandler(this.buttonRemovePage_Click);
             // 
-            // buttonFindForm
+            // labelAutoSave
             // 
-            this.buttonFindForm.Location = new System.Drawing.Point(129, 11);
-            this.buttonFindForm.Name = "buttonFindForm";
-            this.buttonFindForm.Size = new System.Drawing.Size(71, 25);
-            this.buttonFindForm.TabIndex = 38;
-            this.buttonFindForm.Text = "Find";
-            this.buttonFindForm.UseVisualStyleBackColor = true;
-            this.buttonFindForm.Click += new System.EventHandler(this.buttonFindForm_Click);
+            this.labelAutoSave.AutoSize = true;
+            this.labelAutoSave.Location = new System.Drawing.Point(991, 227);
+            this.labelAutoSave.Name = "labelAutoSave";
+            this.labelAutoSave.Size = new System.Drawing.Size(57, 13);
+            this.labelAutoSave.TabIndex = 42;
+            this.labelAutoSave.Text = "Auto Save";
             // 
-            // checkBoxForAllDocument
+            // labelItems
             // 
-            this.checkBoxForAllDocument.AutoSize = true;
-            this.checkBoxForAllDocument.Location = new System.Drawing.Point(1102, 515);
-            this.checkBoxForAllDocument.Name = "checkBoxForAllDocument";
-            this.checkBoxForAllDocument.Size = new System.Drawing.Size(107, 17);
-            this.checkBoxForAllDocument.TabIndex = 39;
-            this.checkBoxForAllDocument.Text = "For All Document";
-            this.checkBoxForAllDocument.UseVisualStyleBackColor = true;
-            this.checkBoxForAllDocument.CheckedChanged += new System.EventHandler(this.checkBoxForAllDocument_CheckedChanged);
+            this.labelItems.AutoSize = true;
+            this.labelItems.Location = new System.Drawing.Point(908, 725);
+            this.labelItems.Name = "labelItems";
+            this.labelItems.Size = new System.Drawing.Size(35, 13);
+            this.labelItems.TabIndex = 44;
+            this.labelItems.Text = "Items:";
+            this.labelItems.Click += new System.EventHandler(this.labelItems_Click);
             // 
-            // buttonExtra1
+            // toolStrip1
             // 
-            this.buttonExtra1.Location = new System.Drawing.Point(221, 13);
-            this.buttonExtra1.Name = "buttonExtra1";
-            this.buttonExtra1.Size = new System.Drawing.Size(71, 23);
-            this.buttonExtra1.TabIndex = 40;
-            this.buttonExtra1.Text = "Extra1";
-            this.buttonExtra1.UseVisualStyleBackColor = true;
-            this.buttonExtra1.Click += new System.EventHandler(this.buttonExtra1_Click);
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonOpen,
+            this.toolStripSeparator1,
+            this.toolStripButtonFind,
+            this.toolStripSeparator2,
+            this.toolStripButtonConvertLetters,
+            this.toolStripButtonExtra1,
+            this.toolStripSeparator3,
+            this.toolStripButtonFont,
+            this.toolStripSeparator6,
+            this.toolStripButtonUndo,
+            this.toolStripButtonRedo,
+            this.toolStripSeparator7,
+            this.toolStripButton2,
+            this.toolStripSeparator4,
+            this.toolStripButton3,
+            this.toolStripSeparator9,
+            this.toolStripButtonExtractImages,
+            this.toolStripSeparator5,
+            this.toolStripButtonPrint,
+            this.toolStripSeparator8,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1286, 27);
+            this.toolStrip1.TabIndex = 45;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
+            // toolStripButtonOpen
+            // 
+            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpen.Image")));
+            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
+            this.toolStripButtonOpen.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonOpen.Text = "Open";
+            this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonFind
+            // 
+            this.toolStripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFind.Image")));
+            this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFind.Name = "toolStripButtonFind";
+            this.toolStripButtonFind.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonFind.Text = "Find";
+            this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonConvertLetters
+            // 
+            this.toolStripButtonConvertLetters.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonConvertLetters.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonConvertLetters.Image")));
+            this.toolStripButtonConvertLetters.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonConvertLetters.Name = "toolStripButtonConvertLetters";
+            this.toolStripButtonConvertLetters.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonConvertLetters.Text = "ConvertLetters";
+            this.toolStripButtonConvertLetters.Click += new System.EventHandler(this.toolStripButtonConvertLetters_Click);
+            // 
+            // toolStripButtonExtra1
+            // 
+            this.toolStripButtonExtra1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExtra1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtra1.Image")));
+            this.toolStripButtonExtra1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExtra1.Name = "toolStripButtonExtra1";
+            this.toolStripButtonExtra1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonExtra1.Text = "Extra1";
+            this.toolStripButtonExtra1.Click += new System.EventHandler(this.toolStripButtonExtra1_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonFont
+            // 
+            this.toolStripButtonFont.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFont.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFont.Image")));
+            this.toolStripButtonFont.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFont.Name = "toolStripButtonFont";
+            this.toolStripButtonFont.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonFont.Text = "Font";
+            this.toolStripButtonFont.Click += new System.EventHandler(this.toolStripButtonFont_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonUndo
+            // 
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
+            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonUndo.Text = "Undo";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
+            // 
+            // toolStripButtonRedo
+            // 
+            this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRedo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRedo.Image")));
+            this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRedo.Name = "toolStripButtonRedo";
+            this.toolStripButtonRedo.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonRedo.Text = "Redo";
+            this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Text = "DataBase";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton3.Text = "PdfFindWord";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonExtractImages
+            // 
+            this.toolStripButtonExtractImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExtractImages.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtractImages.Image")));
+            this.toolStripButtonExtractImages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExtractImages.Name = "toolStripButtonExtractImages";
+            this.toolStripButtonExtractImages.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonExtractImages.Text = "Extract Images From PDF";
+            this.toolStripButtonExtractImages.Click += new System.EventHandler(this.toolStripButtonExtractImages_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonPrint
+            // 
+            this.toolStripButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPrint.Image")));
+            this.toolStripButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPrint.Name = "toolStripButtonPrint";
+            this.toolStripButtonPrint.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonPrint.Text = "Print";
+            this.toolStripButtonPrint.Click += new System.EventHandler(this.toolStripButtonPrint_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "Export";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // labelPathToExport
+            // 
+            this.labelPathToExport.AutoSize = true;
+            this.labelPathToExport.Location = new System.Drawing.Point(33, 774);
+            this.labelPathToExport.Name = "labelPathToExport";
+            this.labelPathToExport.Size = new System.Drawing.Size(75, 13);
+            this.labelPathToExport.TabIndex = 46;
+            this.labelPathToExport.Text = "PathToExport:";
+            this.labelPathToExport.Click += new System.EventHandler(this.labelPathToExport_Click);
+            // 
+            // checkBoxSaveInCurrentDocument
+            // 
+            this.checkBoxSaveInCurrentDocument.AutoSize = true;
+            this.checkBoxSaveInCurrentDocument.Location = new System.Drawing.Point(997, 155);
+            this.checkBoxSaveInCurrentDocument.Name = "checkBoxSaveInCurrentDocument";
+            this.checkBoxSaveInCurrentDocument.Size = new System.Drawing.Size(234, 17);
+            this.checkBoxSaveInCurrentDocument.TabIndex = 47;
+            this.checkBoxSaveInCurrentDocument.Text = "Save In Current Document (Load All In One)";
+            this.checkBoxSaveInCurrentDocument.UseVisualStyleBackColor = true;
+            this.checkBoxSaveInCurrentDocument.CheckedChanged += new System.EventHandler(this.checkBoxSaveInCurrentDocument_CheckedChanged);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // comboBoxAutoSaveForm1
+            // 
+            this.comboBoxAutoSaveForm1.FormattingEnabled = true;
+            this.comboBoxAutoSaveForm1.Items.AddRange(new object[] {
+            "1",
+            "5",
+            "10",
+            "30",
+            "60",
+            "120"});
+            this.comboBoxAutoSaveForm1.Location = new System.Drawing.Point(994, 192);
+            this.comboBoxAutoSaveForm1.Name = "comboBoxAutoSaveForm1";
+            this.comboBoxAutoSaveForm1.Size = new System.Drawing.Size(51, 21);
+            this.comboBoxAutoSaveForm1.TabIndex = 49;
+            // 
+            // checkBoxAutoSaveForm1
+            // 
+            this.checkBoxAutoSaveForm1.AutoSize = true;
+            this.checkBoxAutoSaveForm1.Location = new System.Drawing.Point(1060, 194);
+            this.checkBoxAutoSaveForm1.Name = "checkBoxAutoSaveForm1";
+            this.checkBoxAutoSaveForm1.Size = new System.Drawing.Size(102, 17);
+            this.checkBoxAutoSaveForm1.TabIndex = 48;
+            this.checkBoxAutoSaveForm1.Text = "AutoSave (sec.)";
+            this.checkBoxAutoSaveForm1.UseVisualStyleBackColor = true;
+            this.checkBoxAutoSaveForm1.CheckedChanged += new System.EventHandler(this.checkBoxAutoSave_CheckedChanged);
+            // 
+            // checkBoxCheckSpelling
+            // 
+            this.checkBoxCheckSpelling.AutoSize = true;
+            this.checkBoxCheckSpelling.Location = new System.Drawing.Point(1066, 493);
+            this.checkBoxCheckSpelling.Name = "checkBoxCheckSpelling";
+            this.checkBoxCheckSpelling.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxCheckSpelling.TabIndex = 51;
+            this.checkBoxCheckSpelling.Text = "Check Spelling";
+            this.checkBoxCheckSpelling.UseVisualStyleBackColor = true;
+            this.checkBoxCheckSpelling.CheckedChanged += new System.EventHandler(this.checkBoxCheckSpelling_CheckedChanged);
+            // 
+            // buttonYes
+            // 
+            this.buttonYes.Location = new System.Drawing.Point(1187, 558);
+            this.buttonYes.Name = "buttonYes";
+            this.buttonYes.Size = new System.Drawing.Size(65, 29);
+            this.buttonYes.TabIndex = 52;
+            this.buttonYes.Text = "Yes For All";
+            this.buttonYes.UseVisualStyleBackColor = true;
+            this.buttonYes.Click += new System.EventHandler(this.buttonYes_Click);
+            // 
+            // comboBoxTollerance
+            // 
+            this.comboBoxTollerance.FormattingEnabled = true;
+            this.comboBoxTollerance.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBoxTollerance.Location = new System.Drawing.Point(994, 491);
+            this.comboBoxTollerance.Name = "comboBoxTollerance";
+            this.comboBoxTollerance.Size = new System.Drawing.Size(66, 21);
+            this.comboBoxTollerance.TabIndex = 55;
+            // 
+            // richTextBoxSpelling
+            // 
+            this.richTextBoxSpelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxSpelling.Location = new System.Drawing.Point(994, 558);
+            this.richTextBoxSpelling.Name = "richTextBoxSpelling";
+            this.richTextBoxSpelling.Size = new System.Drawing.Size(187, 164);
+            this.richTextBoxSpelling.TabIndex = 56;
+            this.richTextBoxSpelling.Text = "";
+            // 
+            // labelSpellingInfo
+            // 
+            this.labelSpellingInfo.AutoSize = true;
+            this.labelSpellingInfo.Location = new System.Drawing.Point(994, 725);
+            this.labelSpellingInfo.Name = "labelSpellingInfo";
+            this.labelSpellingInfo.Size = new System.Drawing.Size(47, 13);
+            this.labelSpellingInfo.TabIndex = 57;
+            this.labelSpellingInfo.Text = "Change:";
+            // 
+            // buttonInsertWordIntoDB
+            // 
+            this.buttonInsertWordIntoDB.Location = new System.Drawing.Point(991, 443);
+            this.buttonInsertWordIntoDB.Name = "buttonInsertWordIntoDB";
+            this.buttonInsertWordIntoDB.Size = new System.Drawing.Size(190, 32);
+            this.buttonInsertWordIntoDB.TabIndex = 58;
+            this.buttonInsertWordIntoDB.Text = "Insert Word Into DB";
+            this.buttonInsertWordIntoDB.UseVisualStyleBackColor = true;
+            this.buttonInsertWordIntoDB.Click += new System.EventHandler(this.buttonInsertWordIntoDB_Click);
+            // 
+            // buttonConvertToBgCyrillic
+            // 
+            this.buttonConvertToBgCyrillic.Location = new System.Drawing.Point(1130, 12);
+            this.buttonConvertToBgCyrillic.Name = "buttonConvertToBgCyrillic";
+            this.buttonConvertToBgCyrillic.Size = new System.Drawing.Size(122, 55);
+            this.buttonConvertToBgCyrillic.TabIndex = 59;
+            this.buttonConvertToBgCyrillic.Text = "Convert To Bg Cyrillic";
+            this.buttonConvertToBgCyrillic.UseVisualStyleBackColor = true;
+            this.buttonConvertToBgCyrillic.Click += new System.EventHandler(this.buttonConvertToBgCyrillic_Click);
+            // 
+            // buttonComb3Buttons
+            // 
+            this.buttonComb3Buttons.Location = new System.Drawing.Point(1164, 93);
+            this.buttonComb3Buttons.Name = "buttonComb3Buttons";
+            this.buttonComb3Buttons.Size = new System.Drawing.Size(88, 32);
+            this.buttonComb3Buttons.TabIndex = 60;
+            this.buttonComb3Buttons.Text = "Comb3Buttons";
+            this.buttonComb3Buttons.UseVisualStyleBackColor = true;
+            this.buttonComb3Buttons.Click += new System.EventHandler(this.buttonComb3Buttons_Click);
+            // 
+            // buttonSkip
+            // 
+            this.buttonSkip.Location = new System.Drawing.Point(1088, 528);
+            this.buttonSkip.Name = "buttonSkip";
+            this.buttonSkip.Size = new System.Drawing.Size(93, 24);
+            this.buttonSkip.TabIndex = 62;
+            this.buttonSkip.Text = ">>";
+            this.buttonSkip.UseVisualStyleBackColor = true;
+            this.buttonSkip.Click += new System.EventHandler(this.buttonSkip_Click);
+            // 
+            // buttonPreviousCheckWord
+            // 
+            this.buttonPreviousCheckWord.Location = new System.Drawing.Point(994, 529);
+            this.buttonPreviousCheckWord.Name = "buttonPreviousCheckWord";
+            this.buttonPreviousCheckWord.Size = new System.Drawing.Size(88, 23);
+            this.buttonPreviousCheckWord.TabIndex = 63;
+            this.buttonPreviousCheckWord.Text = "<<";
+            this.buttonPreviousCheckWord.UseVisualStyleBackColor = true;
+            this.buttonPreviousCheckWord.Click += new System.EventHandler(this.buttonPreviousCheckWord_Click);
+            // 
+            // progressBarDoc
+            // 
+            this.progressBarDoc.Location = new System.Drawing.Point(36, 725);
+            this.progressBarDoc.Name = "progressBarDoc";
+            this.progressBarDoc.Size = new System.Drawing.Size(866, 13);
+            this.progressBarDoc.TabIndex = 64;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(1116, 348);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(65, 29);
+            this.buttonClear.TabIndex = 66;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // checkBoxCut
+            // 
+            this.checkBoxCut.AutoSize = true;
+            this.checkBoxCut.Location = new System.Drawing.Point(1109, 101);
+            this.checkBoxCut.Name = "checkBoxCut";
+            this.checkBoxCut.Size = new System.Drawing.Size(42, 17);
+            this.checkBoxCut.TabIndex = 67;
+            this.checkBoxCut.Text = "Cut";
+            this.checkBoxCut.UseVisualStyleBackColor = true;
+            this.checkBoxCut.CheckedChanged += new System.EventHandler(this.checkBoxCut_CheckedChanged);
+            // 
+            // textBoxFromPage
+            // 
+            this.textBoxFromPage.Location = new System.Drawing.Point(986, 99);
+            this.textBoxFromPage.Name = "textBoxFromPage";
+            this.textBoxFromPage.Size = new System.Drawing.Size(55, 20);
+            this.textBoxFromPage.TabIndex = 68;
+            // 
+            // textBoxToPage
+            // 
+            this.textBoxToPage.Location = new System.Drawing.Point(1053, 99);
+            this.textBoxToPage.Name = "textBoxToPage";
+            this.textBoxToPage.Size = new System.Drawing.Size(50, 20);
+            this.textBoxToPage.TabIndex = 69;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(983, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "From Page";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1050, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "To Page";
+            // 
+            // lineNumbers_For_RichTextBox1
+            // 
+            this.lineNumbers_For_RichTextBox1._SeeThroughMode_ = false;
+            this.lineNumbers_For_RichTextBox1.AutoSizing = true;
+            this.lineNumbers_For_RichTextBox1.BackgroundGradient_AlphaColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lineNumbers_For_RichTextBox1.BackgroundGradient_BetaColor = System.Drawing.Color.LightSteelBlue;
+            this.lineNumbers_For_RichTextBox1.BackgroundGradient_Direction = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.lineNumbers_For_RichTextBox1.BorderLines_Color = System.Drawing.Color.SlateGray;
+            this.lineNumbers_For_RichTextBox1.BorderLines_Style = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.lineNumbers_For_RichTextBox1.BorderLines_Thickness = 1F;
+            this.lineNumbers_For_RichTextBox1.DockSide = LineNumbers.LineNumbers_For_RichTextBox.LineNumberDockSide.Left;
+            this.lineNumbers_For_RichTextBox1.GridLines_Color = System.Drawing.Color.SlateGray;
+            this.lineNumbers_For_RichTextBox1.GridLines_Style = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.lineNumbers_For_RichTextBox1.GridLines_Thickness = 1F;
+            this.lineNumbers_For_RichTextBox1.LineNrs_Alignment = System.Drawing.ContentAlignment.TopRight;
+            this.lineNumbers_For_RichTextBox1.LineNrs_AntiAlias = true;
+            this.lineNumbers_For_RichTextBox1.LineNrs_AsHexadecimal = false;
+            this.lineNumbers_For_RichTextBox1.LineNrs_ClippedByItemRectangle = true;
+            this.lineNumbers_For_RichTextBox1.LineNrs_LeadingZeroes = true;
+            this.lineNumbers_For_RichTextBox1.LineNrs_Offset = new System.Drawing.Size(0, 0);
+            this.lineNumbers_For_RichTextBox1.Location = new System.Drawing.Point(18, 151);
+            this.lineNumbers_For_RichTextBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.lineNumbers_For_RichTextBox1.MarginLines_Color = System.Drawing.Color.SlateGray;
+            this.lineNumbers_For_RichTextBox1.MarginLines_Side = LineNumbers.LineNumbers_For_RichTextBox.LineNumberDockSide.Right;
+            this.lineNumbers_For_RichTextBox1.MarginLines_Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lineNumbers_For_RichTextBox1.MarginLines_Thickness = 1F;
+            this.lineNumbers_For_RichTextBox1.Name = "lineNumbers_For_RichTextBox1";
+            this.lineNumbers_For_RichTextBox1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.lineNumbers_For_RichTextBox1.ParentRichTextBox = this.richTextBoxFileWindow;
+            this.lineNumbers_For_RichTextBox1.Show_BackgroundGradient = true;
+            this.lineNumbers_For_RichTextBox1.Show_BorderLines = true;
+            this.lineNumbers_For_RichTextBox1.Show_GridLines = true;
+            this.lineNumbers_For_RichTextBox1.Show_LineNrs = true;
+            this.lineNumbers_For_RichTextBox1.Show_MarginLines = true;
+            this.lineNumbers_For_RichTextBox1.Size = new System.Drawing.Size(17, 571);
+            this.lineNumbers_For_RichTextBox1.TabIndex = 65;
+            this.lineNumbers_For_RichTextBox1.Click += new System.EventHandler(this.lineNumbers_For_RichTextBox1_Click);
+            // 
+            // labelLibraryStatus
+            // 
+            this.labelLibraryStatus.AutoSize = true;
+            this.labelLibraryStatus.Location = new System.Drawing.Point(33, 804);
+            this.labelLibraryStatus.Name = "labelLibraryStatus";
+            this.labelLibraryStatus.Size = new System.Drawing.Size(72, 13);
+            this.labelLibraryStatus.TabIndex = 72;
+            this.labelLibraryStatus.Text = "Library status:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 753);
-            this.Controls.Add(this.buttonExtra1);
-            this.Controls.Add(this.checkBoxForAllDocument);
-            this.Controls.Add(this.buttonFindForm);
+            this.ClientSize = new System.Drawing.Size(1286, 826);
+            this.Controls.Add(this.labelLibraryStatus);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxToPage);
+            this.Controls.Add(this.textBoxFromPage);
+            this.Controls.Add(this.checkBoxCut);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.lineNumbers_For_RichTextBox1);
+            this.Controls.Add(this.progressBarDoc);
+            this.Controls.Add(this.buttonPreviousCheckWord);
+            this.Controls.Add(this.buttonSkip);
+            this.Controls.Add(this.buttonComb3Buttons);
+            this.Controls.Add(this.buttonConvertToBgCyrillic);
+            this.Controls.Add(this.buttonInsertWordIntoDB);
+            this.Controls.Add(this.labelSpellingInfo);
+            this.Controls.Add(this.richTextBoxSpelling);
+            this.Controls.Add(this.comboBoxTollerance);
+            this.Controls.Add(this.buttonYes);
+            this.Controls.Add(this.checkBoxCheckSpelling);
+            this.Controls.Add(this.comboBoxAutoSaveForm1);
+            this.Controls.Add(this.checkBoxAutoSaveForm1);
+            this.Controls.Add(this.checkBoxSaveInCurrentDocument);
+            this.Controls.Add(this.labelPathToExport);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.labelItems);
+            this.Controls.Add(this.labelAutoSave);
             this.Controls.Add(this.buttonRemovePage);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBoxMin);
-            this.Controls.Add(this.checkBoxAutoSave);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBoxFont);
-            this.Controls.Add(this.buttonRemoveEquals);
-            this.Controls.Add(this.buttonAbv);
-            this.Controls.Add(this.buttonToLower);
-            this.Controls.Add(this.buttonToUpper);
             this.Controls.Add(this.buttonLoadRememberPage);
             this.Controls.Add(this.textBoxRememberText);
-            this.Controls.Add(this.checkBoxRememberText);
             this.Controls.Add(this.buttonRememberText);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonRemoveSpaces);
-            this.Controls.Add(this.progressBarSaveAllPages);
-            this.Controls.Add(this.checkBoxSaveAllPages);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.hScrollBarFont);
-            this.Controls.Add(this.comboBoxExtension);
             this.Controls.Add(this.buttonSelectPege);
             this.Controls.Add(this.textBoxPage);
             this.Controls.Add(this.labelDestination);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelPages);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrevious);
-            this.Controls.Add(this.buttonChoiceFile);
             this.Controls.Add(this.richTextBoxFileWindow);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxRegEx);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegExTextEditor";
+            this.Text = "FOXTextEditor";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxRegEx;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonChoiceFile;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label labelPages;
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label labelDestination;
-        private System.Windows.Forms.TextBox textBoxPage;
-        private System.Windows.Forms.Button buttonSelectPege;
-        private System.Windows.Forms.ComboBox comboBoxExtension;
-        private System.Windows.Forms.HScrollBar hScrollBarFont;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBoxSaveAllPages;
-        private System.Windows.Forms.ProgressBar progressBarSaveAllPages;
-        private System.Windows.Forms.Button buttonRemoveSpaces;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBoxPage;
         private System.Windows.Forms.Button buttonRememberText;
-        private System.Windows.Forms.CheckBox checkBoxRememberText;
         private System.Windows.Forms.TextBox textBoxRememberText;
         private System.Windows.Forms.Button buttonLoadRememberPage;
-        private System.Windows.Forms.Button buttonToUpper;
-        private System.Windows.Forms.Button buttonToLower;
-        private System.Windows.Forms.Button buttonAbv;
-        private System.Windows.Forms.Button buttonRemoveEquals;
-        private System.Windows.Forms.ComboBox comboBoxFont;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBoxAutoSave;
-        private System.Windows.Forms.ComboBox comboBoxMin;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonRemovePage;
-        private System.Windows.Forms.Button buttonFindForm;
-        private System.Windows.Forms.CheckBox checkBoxForAllDocument;
         public System.Windows.Forms.RichTextBox richTextBoxFileWindow;
-        private System.Windows.Forms.Button buttonExtra1;
+        public System.Windows.Forms.Label labelAutoSave;
+        public System.Windows.Forms.Label labelItems;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonOpen;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFind;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExtra1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFont;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.Label labelPathToExport;
+        private System.Windows.Forms.CheckBox checkBoxSaveInCurrentDocument;
+        private System.Windows.Forms.ToolStripButton toolStripButtonPrint;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUndo;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRedo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.CheckBox checkBoxAutoSaveForm1;
+        private System.Windows.Forms.ComboBox comboBoxAutoSaveForm1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.CheckBox checkBoxCheckSpelling;
+        private System.Windows.Forms.Button buttonYes;
+        private System.Windows.Forms.ComboBox comboBoxTollerance;
+        private System.Windows.Forms.RichTextBox richTextBoxSpelling;
+        private System.Windows.Forms.Label labelSpellingInfo;
+        private System.Windows.Forms.Button buttonInsertWordIntoDB;
+        private System.Windows.Forms.Button buttonConvertToBgCyrillic;
+        private System.Windows.Forms.Button buttonComb3Buttons;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        public System.Windows.Forms.Button buttonSelectPege;
+        private System.Windows.Forms.Button buttonSkip;
+        private System.Windows.Forms.Button buttonPreviousCheckWord;
+        private System.Windows.Forms.ToolStripButton toolStripButtonConvertLetters;
+        private System.Windows.Forms.ProgressBar progressBarDoc;
+        private LineNumbers.LineNumbers_For_RichTextBox lineNumbers_For_RichTextBox1;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.CheckBox checkBoxCut;
+        private System.Windows.Forms.TextBox textBoxFromPage;
+        private System.Windows.Forms.TextBox textBoxToPage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExtractImages;
+        private System.Windows.Forms.Label labelLibraryStatus;
     }
 }
 
