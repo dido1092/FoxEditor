@@ -1,0 +1,49 @@
+Using SharpDevelop (3.x):
+1. Create a new C# Windows Project
+2. Add Reference to your project (Right click 'References' > 'Add Reference‘)
+3. Under GAC Tab select "MicrosoftMsualBasic"
+4- Insert into your project existing item. "linenum_rtf.cs"
+‘5. Under Custom Components insert "LineNumbers_For_RichTextBox" into your form as well as inserting a RichTextBox
+6. Line them up side by side (left side by default).
+7. Linking Line Numbers to your RichTextBox
+1. Under "Add LineNumbers to" > "Parent Rich Text Box":
+2. Select your RichTextBox to add line numbers to
+3. (feel free to customize it on your own)
+8- Run the project!
+
+
+============================================================================================================================================
+Using Visual Studio (2008):
+1. Create a new C# Windows Project
+2. Add Reference to your project (Right click 'References' > 'Add Reference‘)
+3- Under .NET Tab select: "MicrosofLVisualBasic"
+4- Insert into your project existing item. "linenum_rtf.cs"
+5- Build your project!
+	1- This will not show under Custom Components unless you build you project first!
+6- Under Custom Components insert "LineNumbers_For_RichTextBox" into your form as well as inserting a RichTextBox
+7. Line them up side by side (left side by default).
+8. Linking Line Numbers to your RichTextBox
+	1. Under "Add LineNumbers to" > "Parent Rich Text Box":
+	2. Select your RichTextBox to add line numbers to
+	3. (feel free to customize it on your own)
+9. Run the project!
+Background 81 Points of Interest As a software designer/developer like all of you, time is of the essence when meeting deadlines! This
+example using the RichText control works great! Especially with the zoom in/out feature using the mouse wheel, and it added nice
+graphical features which can be easily customized. However, I feel the urging need to program in C# and this example was only
+provided in VB.NET... It was time to upgrade it 8c now, on with the show!
+
+============================================================================================================================================
+History
+- 2009.08.05 - Initial conversion from VB.Net to G:
+- 2009.08.08 - Updated notes on this page. (pictures soon to come]
+To Do
+- Provide 2 versions:
+0 Graphical: The current version {customizable and beautiful)
+0 Simple: Side bar is simple 8! has low overhead on your projects
+- Strip out references to Microsoft.\?sualBasic so it's more pure C":
+
+Produced by http://www.structurise.com
+
+
+Link to download:
+https://www.codeproject.com/KB/cs/Line_Numbers_for_RichText.aspx

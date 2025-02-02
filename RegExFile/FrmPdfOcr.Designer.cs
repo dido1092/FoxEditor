@@ -49,7 +49,9 @@
             this.comboBoxLanguages.FormattingEnabled = true;
             this.comboBoxLanguages.Items.AddRange(new object[] {
             "Bul",
-            "Eng"});
+            "Eng",
+            "Lat",
+            "LatAlhaBet"});
             this.comboBoxLanguages.Location = new System.Drawing.Point(145, 102);
             this.comboBoxLanguages.Name = "comboBoxLanguages";
             this.comboBoxLanguages.Size = new System.Drawing.Size(100, 21);

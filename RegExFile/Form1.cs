@@ -66,6 +66,7 @@ using UglyToad.PdfPig.Content;
 using Aspose.Words.Pdf2Word.OCR;
 using DocumentFormat.OpenXml.Bibliography;
 using System.Security.Cryptography;
+using Grpc.Core;
 
 
 namespace RegExFile
@@ -251,7 +252,15 @@ namespace RegExFile
                 {
                     ocr.Language = OcrLanguage.EnglishBest;
                 }
-                License.LicenseKey = "IRONSUITE.DEYANGOSPODINOV1092.ABV.BG.11992-D51D934485-CZ35UVCKCH3LUV-B5LFNWDVUWYL-PFKJLCGQ2DNO-IDJY6HL6ZUCO-UCLYBAUCQTTI-DMP4QZXRSLFX-CKO25X-TYYDDSKMUI2NUA-DEPLOYMENT.TRIAL-W6RZK4.TRIAL.EXPIRES.11.OCT.2024";
+                else if (getLanguageFromPdfReader == "Lat")
+                {
+                    ocr.Language = OcrLanguage.LatinBest;
+                }
+                else if (getLanguageFromPdfReader == "LatAlhaBet")
+                {
+                    ocr.Language = OcrLanguage.LatinAlphabetBest;
+                }
+                License.LicenseKey = "IRONSUITE.ORANGEBOX34.ABV.BG.17791-4E90C59BBD-BULQSL5-SF77KQ7R5HXG-GWBLGJF34DQQ-Q5OCVFRV7OOT-M6FJ7JSGHP46-7X6YV5EM5S47-XDOA7K7X6JF7-73Q5FD-TXUJ3T5HFC2OUA-DEPLOYMENT.TRIAL-VRXCEX.TRIAL.EXPIRES.04.FEB.2025";
                 ironOcrLicenseKey = License.LicenseKey;
 
 
@@ -515,7 +524,8 @@ namespace RegExFile
             if (this.getOCR == "Iron OCR")
             {
                 //========================== IRON ===========================================================
-                License.LicenseKey = "IRONSUITE.DEYANGOSPODINOV1092.ABV.BG.11992-D51D934485-CZ35UVCKCH3LUV-B5LFNWDVUWYL-PFKJLCGQ2DNO-IDJY6HL6ZUCO-UCLYBAUCQTTI-DMP4QZXRSLFX-CKO25X-TYYDDSKMUI2NUA-DEPLOYMENT.TRIAL-W6RZK4.TRIAL.EXPIRES.11.OCT.2024";
+                //License.LicenseKey = "IRONSUITE.DEYANGOSPODINOV1092.ABV.BG.11992-D51D934485-CZ35UVCKCH3LUV-B5LFNWDVUWYL-PFKJLCGQ2DNO-IDJY6HL6ZUCO-UCLYBAUCQTTI-DMP4QZXRSLFX-CKO25X-TYYDDSKMUI2NUA-DEPLOYMENT.TRIAL-W6RZK4.TRIAL.EXPIRES.11.OCT.2024";
+                License.LicenseKey = "IRONSUITE.ORANGEBOX34.ABV.BG.17791-4E90C59BBD-BULQSL5-SF77KQ7R5HXG-GWBLGJF34DQQ-Q5OCVFRV7OOT-M6FJ7JSGHP46-7X6YV5EM5S47-XDOA7K7X6JF7-73Q5FD-TXUJ3T5HFC2OUA-DEPLOYMENT.TRIAL-VRXCEX.TRIAL.EXPIRES.04.FEB.2025";
                 ironOcrLicenseKey = License.LicenseKey;
 
                 var ocr = new IronTesseract();
@@ -531,7 +541,7 @@ namespace RegExFile
                     {
                         Ocr.Language = OcrLanguage.Bulgarian;
                     }
-                    if (getLanguageFromImage == "Eng")
+                    else if (getLanguageFromImage == "Eng")
                     {
                         Ocr.Language = OcrLanguage.English;
                     }
@@ -608,7 +618,7 @@ namespace RegExFile
             OpenFileDialog openFileDialog1 = new OpenFileDialog()
             {
                 InitialDirectory = @"C:\",
-                Title = "Browse AudioVideo Files",
+                Title = "Browse Doc Files",
 
                 CheckFileExists = true,
                 CheckPathExists = true,
@@ -795,10 +805,33 @@ namespace RegExFile
 
         public void buttonRememberText_Click_1(object sender, EventArgs e)
         {
-            RememberText();
+            HashSet<RememberText> hsGetText = RememberText();
+
+            SaveToBufferFile(hsGetText);
         }
 
-        public void RememberText()
+        private static void SaveToBufferFile(HashSet<RememberText> hsGetText)
+        {
+            StringBuilder sbAllText = new StringBuilder();
+
+            string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + @"\REMEMBER_TEXT";
+
+            bool exists = Directory.Exists(path);
+
+            if (!exists)
+            {
+                DirectoryInfo directoryInfo = Directory.CreateDirectory(path);
+            }
+
+            foreach (var t in hsGetText)
+            {
+                sbAllText.AppendLine(t.Text);
+            }
+
+            File.WriteAllText(path + "\\Text_file.txt", string.Join("\n", sbAllText));
+        }
+
+        public HashSet<RememberText> RememberText()
         {
             if (!checkBoxSaveInCurrentDocument.Checked && checkBoxCut.Checked == false)
             {
@@ -826,6 +859,8 @@ namespace RegExFile
                 }
 
                 hsRememberText.Add(rememberText).ToString().OrderBy(t => t);
+
+
             }
             else if (checkBoxCut.Checked)
             {
@@ -880,6 +915,8 @@ namespace RegExFile
 
             //textBoxRememberText.Text = string.Join("\t", lsPages.OrderBy(p => p));
             textBoxRememberText.Text = string.Join("\t", hsRememberText.Select(p => p.PageNum).OrderBy(p => p));
+
+            return hsRememberText;
         }
 
         private void buttonLoadRememberPage_Click(object sender, EventArgs e)
@@ -1032,7 +1069,7 @@ namespace RegExFile
                 labelItems.Text = $"Lines: {arrWordsInPage.Length}";
 
                 string[] arrLicenseKey = ironOcrLicenseKey.Split('.');
-                
+
                 //arrLicenseKey[arrLicenseKey.Length - 1] = 2023.ToString();
                 //arrLicenseKey[arrLicenseKey.Length - 2] = "SEPT";
                 //arrLicenseKey[arrLicenseKey.Length - 3] = 19.ToString();
@@ -1059,11 +1096,11 @@ namespace RegExFile
 
                         indexOfMonth = arrMonths.IndexOf(getMonth) + 1;
 
-                        if (indexOfMonth - currentMonth  < 0)
+                        if (indexOfMonth - currentMonth < 0)
                         {
                             labelLibraryStatus.BackColor = System.Drawing.Color.Red;
                         }
-                        else if(indexOfMonth - currentMonth == 0)
+                        else if (indexOfMonth - currentMonth == 0)
                         {
                             if (int.Parse(arrLicenseKey[arrLicenseKey.Length - 3]) - currentDay < 0)
                             {
@@ -1916,6 +1953,19 @@ namespace RegExFile
         {
             FrmExtractImagesFromPdf frmExtractImagesFromPdf = new FrmExtractImagesFromPdf();
             frmExtractImagesFromPdf.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            FrmExtra2 frmExtra2 = new FrmExtra2(richTextBoxFileWindow);
+
+            frmExtra2.Show();
+        }
+
+        private void toolStripButtonMerge_Click(object sender, EventArgs e)
+        {
+            FrmMergeTxt frmMergeTxt = new FrmMergeTxt();
+            frmMergeTxt.Show();
         }
     }
 }

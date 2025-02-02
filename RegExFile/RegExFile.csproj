@@ -90,6 +90,12 @@
     <Reference Include="ExCSS, Version=4.2.3.0, Culture=neutral, PublicKeyToken=bdbe16be9b936b9a, processorArchitecture=MSIL">
       <HintPath>..\packages\ExCSS.4.2.3\lib\netstandard2.0\ExCSS.dll</HintPath>
     </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.6\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.46.6\lib\net45\Grpc.Core.Api.dll</HintPath>
+    </Reference>
     <Reference Include="H.InputSimulator, Version=1.4.2.0, Culture=neutral, PublicKeyToken=603f13207e65c17b, processorArchitecture=MSIL">
       <HintPath>..\packages\H.InputSimulator.1.4.2\lib\net451\H.InputSimulator.dll</HintPath>
     </Reference>
@@ -589,6 +595,12 @@
     <Compile Include="FrmExport.Designer.cs">
       <DependentUpon>FrmExport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmExtra2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtra2.Designer.cs">
+      <DependentUpon>FrmExtra2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmExtractImagesFromPdf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +642,12 @@
     </Compile>
     <Compile Include="FrmLines.Designer.cs">
       <DependentUpon>FrmLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMergeTxt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMergeTxt.Designer.cs">
+      <DependentUpon>FrmMergeTxt.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPdfOcr.cs">
       <SubType>Form</SubType>
@@ -682,6 +700,9 @@
     <EmbeddedResource Include="FrmExport.resx">
       <DependentUpon>FrmExport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtra2.resx">
+      <DependentUpon>FrmExtra2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmExtractImagesFromPdf.resx">
       <DependentUpon>FrmExtractImagesFromPdf.cs</DependentUpon>
     </EmbeddedResource>
@@ -702,6 +723,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLines.resx">
       <DependentUpon>FrmLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMergeTxt.resx">
+      <DependentUpon>FrmMergeTxt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPdfOcr.resx">
       <DependentUpon>FrmPdfOcr.cs</DependentUpon>
@@ -808,6 +832,9 @@
     <Error Condition="!Exists('..\packages\IronOcr.2024.9.6\build\net\IronOcr.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.2024.9.6\build\net\IronOcr.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
+    <Error Condition="!Exists('..\packages\IronOcr.Languages.LatinAlphabet.2024.6.1\build\IronOcr.Languages.LatinAlphabet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.Languages.LatinAlphabet.2024.6.1\build\IronOcr.Languages.LatinAlphabet.targets'))" />
+    <Error Condition="!Exists('..\packages\IronOcr.Languages.Latin.2020.11.2\build\IronOcr.Languages.Latin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.Languages.Latin.2020.11.2\build\IronOcr.Languages.Latin.targets'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
@@ -825,4 +852,7 @@
   <Import Project="..\packages\IronOcr.2024.9.6\build\net\IronOcr.targets" Condition="Exists('..\packages\IronOcr.2024.9.6\build\net\IronOcr.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" />
+  <Import Project="..\packages\IronOcr.Languages.LatinAlphabet.2024.6.1\build\IronOcr.Languages.LatinAlphabet.targets" Condition="Exists('..\packages\IronOcr.Languages.LatinAlphabet.2024.6.1\build\IronOcr.Languages.LatinAlphabet.targets')" />
+  <Import Project="..\packages\IronOcr.Languages.Latin.2020.11.2\build\IronOcr.Languages.Latin.targets" Condition="Exists('..\packages\IronOcr.Languages.Latin.2020.11.2\build\IronOcr.Languages.Latin.targets')" />
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
 </Project>

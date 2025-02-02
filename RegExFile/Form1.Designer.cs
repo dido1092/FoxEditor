@@ -50,6 +50,8 @@
             this.toolStripButtonConvertLetters = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonExtra1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFont = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
@@ -87,8 +89,10 @@
             this.textBoxToPage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lineNumbers_For_RichTextBox1 = new LineNumbers.LineNumbers_For_RichTextBox();
             this.labelLibraryStatus = new System.Windows.Forms.Label();
+            this.lineNumbers_For_RichTextBox1 = new LineNumbers.LineNumbers_For_RichTextBox();
+            this.toolStripButtonMerge = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,6 +236,8 @@
             this.toolStripButtonConvertLetters,
             this.toolStripButtonExtra1,
             this.toolStripSeparator3,
+            this.toolStripButton4,
+            this.toolStripSeparator10,
             this.toolStripButtonFont,
             this.toolStripSeparator6,
             this.toolStripButtonUndo,
@@ -242,6 +248,8 @@
             this.toolStripButton3,
             this.toolStripSeparator9,
             this.toolStripButtonExtractImages,
+            this.toolStripSeparator11,
+            this.toolStripButtonMerge,
             this.toolStripSeparator5,
             this.toolStripButtonPrint,
             this.toolStripSeparator8,
@@ -307,6 +315,21 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Text = "Extra2";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButtonFont
             // 
@@ -638,6 +661,15 @@
             this.label2.TabIndex = 71;
             this.label2.Text = "To Page";
             // 
+            // labelLibraryStatus
+            // 
+            this.labelLibraryStatus.AutoSize = true;
+            this.labelLibraryStatus.Location = new System.Drawing.Point(33, 804);
+            this.labelLibraryStatus.Name = "labelLibraryStatus";
+            this.labelLibraryStatus.Size = new System.Drawing.Size(72, 13);
+            this.labelLibraryStatus.TabIndex = 72;
+            this.labelLibraryStatus.Text = "Library status:";
+            // 
             // lineNumbers_For_RichTextBox1
             // 
             this.lineNumbers_For_RichTextBox1._SeeThroughMode_ = false;
@@ -676,14 +708,20 @@
             this.lineNumbers_For_RichTextBox1.TabIndex = 65;
             this.lineNumbers_For_RichTextBox1.Click += new System.EventHandler(this.lineNumbers_For_RichTextBox1_Click);
             // 
-            // labelLibraryStatus
+            // toolStripButtonMerge
             // 
-            this.labelLibraryStatus.AutoSize = true;
-            this.labelLibraryStatus.Location = new System.Drawing.Point(33, 804);
-            this.labelLibraryStatus.Name = "labelLibraryStatus";
-            this.labelLibraryStatus.Size = new System.Drawing.Size(72, 13);
-            this.labelLibraryStatus.TabIndex = 72;
-            this.labelLibraryStatus.Text = "Library status:";
+            this.toolStripButtonMerge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonMerge.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonMerge.Image")));
+            this.toolStripButtonMerge.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonMerge.Name = "toolStripButtonMerge";
+            this.toolStripButtonMerge.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonMerge.Text = "MergeTxtDocs";
+            this.toolStripButtonMerge.Click += new System.EventHandler(this.toolStripButtonMerge_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 27);
             // 
             // Form1
             // 
@@ -801,6 +839,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton toolStripButtonExtractImages;
         private System.Windows.Forms.Label labelLibraryStatus;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton toolStripButtonMerge;
     }
 }
 
