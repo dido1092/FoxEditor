@@ -153,7 +153,7 @@ namespace RegExFile
                 {
                     if (comboBoxChoice.Text == "1=2")
                     {
-                        sbMergedContent.AppendLine($"{arrContentFirst[i].ToUpper()} - {arrContentSecond[i].ToUpper()}");
+                        sbMergedContent.AppendLine($"{arrContentFirst[i].ToUpper()} <> {arrContentSecond[i].ToUpper()}");
                     }
                     else if (comboBoxChoice.Text == "1>2")
                     {

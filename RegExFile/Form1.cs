@@ -260,7 +260,7 @@ namespace RegExFile
                 {
                     ocr.Language = OcrLanguage.LatinAlphabetBest;
                 }
-                License.LicenseKey = "IRONSUITE.ORANGEBOX34.ABV.BG.17791-4E90C59BBD-BULQSL5-SF77KQ7R5HXG-GWBLGJF34DQQ-Q5OCVFRV7OOT-M6FJ7JSGHP46-7X6YV5EM5S47-XDOA7K7X6JF7-73Q5FD-TXUJ3T5HFC2OUA-DEPLOYMENT.TRIAL-VRXCEX.TRIAL.EXPIRES.04.FEB.2025";
+                License.LicenseKey = "IRONSUITE.DEYANGOSPODINOV1092.ABV.BG.11992-BF79B03DE9-B4EQ2UWZO2E5PU3X-EOJPBMWVYJUE-LRYF7Y4CZLYP-TP6YYVDIKEYM-W6LPJAHCQHQO-BMOPQVXRSLFX-2SBKRO-TJ5KH232522OUA-DEPLOYMENT.TRIAL-C7JVJN.TRIAL.EXPIRES.24.MAR.2025";
                 ironOcrLicenseKey = License.LicenseKey;
 
 
@@ -1966,6 +1966,12 @@ namespace RegExFile
         {
             FrmMergeTxt frmMergeTxt = new FrmMergeTxt();
             frmMergeTxt.Show();
+        }
+
+        private void toolStripButtonExtractIntoFile_Click(object sender, EventArgs e)
+        {
+            FrmExtractFile frmExtractFile = new FrmExtractFile();  
+            frmExtractFile.Show();
         }
     }
 }

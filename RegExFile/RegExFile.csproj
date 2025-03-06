@@ -601,6 +601,12 @@
     <Compile Include="FrmExtra2.Designer.cs">
       <DependentUpon>FrmExtra2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmExtractFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtractFile.Designer.cs">
+      <DependentUpon>FrmExtractFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmExtractImagesFromPdf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -702,6 +708,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtra2.resx">
       <DependentUpon>FrmExtra2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtractFile.resx">
+      <DependentUpon>FrmExtractFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtractImagesFromPdf.resx">
       <DependentUpon>FrmExtractImagesFromPdf.cs</DependentUpon>

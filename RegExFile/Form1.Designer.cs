@@ -43,29 +43,17 @@
             this.labelAutoSave = new System.Windows.Forms.Label();
             this.labelItems = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonConvertLetters = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonExtra1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonFont = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonExtractImages = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonPrint = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.labelPathToExport = new System.Windows.Forms.Label();
             this.checkBoxSaveInCurrentDocument = new System.Windows.Forms.CheckBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -90,9 +78,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelLibraryStatus = new System.Windows.Forms.Label();
-            this.lineNumbers_For_RichTextBox1 = new LineNumbers.LineNumbers_For_RichTextBox();
+            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonConvertLetters = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExtra1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFont = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExtractImages = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonMerge = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonPrint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.lineNumbers_For_RichTextBox1 = new LineNumbers.LineNumbers_For_RichTextBox();
+            this.toolStripButtonExtractIntoFile = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,6 +252,8 @@
             this.toolStripButtonExtractImages,
             this.toolStripSeparator11,
             this.toolStripButtonMerge,
+            this.toolStripSeparator12,
+            this.toolStripButtonExtractIntoFile,
             this.toolStripSeparator5,
             this.toolStripButtonPrint,
             this.toolStripSeparator8,
@@ -261,185 +265,60 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripButtonOpen
-            // 
-            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpen.Image")));
-            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
-            this.toolStripButtonOpen.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonOpen.Text = "Open";
-            this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButtonFind
-            // 
-            this.toolStripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFind.Image")));
-            this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonFind.Name = "toolStripButtonFind";
-            this.toolStripButtonFind.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonFind.Text = "Find";
-            this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButtonConvertLetters
-            // 
-            this.toolStripButtonConvertLetters.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonConvertLetters.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonConvertLetters.Image")));
-            this.toolStripButtonConvertLetters.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonConvertLetters.Name = "toolStripButtonConvertLetters";
-            this.toolStripButtonConvertLetters.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonConvertLetters.Text = "ConvertLetters";
-            this.toolStripButtonConvertLetters.Click += new System.EventHandler(this.toolStripButtonConvertLetters_Click);
-            // 
-            // toolStripButtonExtra1
-            // 
-            this.toolStripButtonExtra1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonExtra1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtra1.Image")));
-            this.toolStripButtonExtra1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonExtra1.Name = "toolStripButtonExtra1";
-            this.toolStripButtonExtra1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonExtra1.Text = "Extra1";
-            this.toolStripButtonExtra1.Click += new System.EventHandler(this.toolStripButtonExtra1_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton4.Text = "Extra2";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButtonFont
-            // 
-            this.toolStripButtonFont.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFont.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFont.Image")));
-            this.toolStripButtonFont.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonFont.Name = "toolStripButtonFont";
-            this.toolStripButtonFont.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonFont.Text = "Font";
-            this.toolStripButtonFont.Click += new System.EventHandler(this.toolStripButtonFont_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButtonUndo
-            // 
-            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
-            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
-            this.toolStripButtonUndo.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonUndo.Text = "Undo";
-            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
-            // 
-            // toolStripButtonRedo
-            // 
-            this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRedo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRedo.Image")));
-            this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRedo.Name = "toolStripButtonRedo";
-            this.toolStripButtonRedo.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonRedo.Text = "Redo";
-            this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton2.Text = "DataBase";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton3.Text = "PdfFindWord";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButtonExtractImages
+            // toolStripSeparator11
             // 
-            this.toolStripButtonExtractImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonExtractImages.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtractImages.Image")));
-            this.toolStripButtonExtractImages.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonExtractImages.Name = "toolStripButtonExtractImages";
-            this.toolStripButtonExtractImages.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonExtractImages.Text = "Extract Images From PDF";
-            this.toolStripButtonExtractImages.Click += new System.EventHandler(this.toolStripButtonExtractImages_Click);
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButtonPrint
-            // 
-            this.toolStripButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPrint.Image")));
-            this.toolStripButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonPrint.Name = "toolStripButtonPrint";
-            this.toolStripButtonPrint.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonPrint.Text = "Print";
-            this.toolStripButtonPrint.Click += new System.EventHandler(this.toolStripButtonPrint_Click);
-            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "Export";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // labelPathToExport
             // 
@@ -670,6 +549,146 @@
             this.labelLibraryStatus.TabIndex = 72;
             this.labelLibraryStatus.Text = "Library status:";
             // 
+            // toolStripButtonOpen
+            // 
+            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpen.Image")));
+            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
+            this.toolStripButtonOpen.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonOpen.Text = "Open";
+            this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
+            // 
+            // toolStripButtonFind
+            // 
+            this.toolStripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFind.Image")));
+            this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFind.Name = "toolStripButtonFind";
+            this.toolStripButtonFind.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonFind.Text = "Find";
+            this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
+            // 
+            // toolStripButtonConvertLetters
+            // 
+            this.toolStripButtonConvertLetters.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonConvertLetters.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonConvertLetters.Image")));
+            this.toolStripButtonConvertLetters.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonConvertLetters.Name = "toolStripButtonConvertLetters";
+            this.toolStripButtonConvertLetters.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonConvertLetters.Text = "ConvertLetters";
+            this.toolStripButtonConvertLetters.Click += new System.EventHandler(this.toolStripButtonConvertLetters_Click);
+            // 
+            // toolStripButtonExtra1
+            // 
+            this.toolStripButtonExtra1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExtra1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtra1.Image")));
+            this.toolStripButtonExtra1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExtra1.Name = "toolStripButtonExtra1";
+            this.toolStripButtonExtra1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonExtra1.Text = "Extra1";
+            this.toolStripButtonExtra1.Click += new System.EventHandler(this.toolStripButtonExtra1_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Text = "Extra2";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButtonFont
+            // 
+            this.toolStripButtonFont.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFont.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFont.Image")));
+            this.toolStripButtonFont.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFont.Name = "toolStripButtonFont";
+            this.toolStripButtonFont.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonFont.Text = "Font";
+            this.toolStripButtonFont.Click += new System.EventHandler(this.toolStripButtonFont_Click);
+            // 
+            // toolStripButtonUndo
+            // 
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
+            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonUndo.Text = "Undo";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
+            // 
+            // toolStripButtonRedo
+            // 
+            this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRedo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRedo.Image")));
+            this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRedo.Name = "toolStripButtonRedo";
+            this.toolStripButtonRedo.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonRedo.Text = "Redo";
+            this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Text = "DataBase";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton3.Text = "PdfFindWord";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButtonExtractImages
+            // 
+            this.toolStripButtonExtractImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExtractImages.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtractImages.Image")));
+            this.toolStripButtonExtractImages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExtractImages.Name = "toolStripButtonExtractImages";
+            this.toolStripButtonExtractImages.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonExtractImages.Text = "Extract Images From PDF";
+            this.toolStripButtonExtractImages.Click += new System.EventHandler(this.toolStripButtonExtractImages_Click);
+            // 
+            // toolStripButtonMerge
+            // 
+            this.toolStripButtonMerge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonMerge.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonMerge.Image")));
+            this.toolStripButtonMerge.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonMerge.Name = "toolStripButtonMerge";
+            this.toolStripButtonMerge.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonMerge.Text = "MergeTxtDocs";
+            this.toolStripButtonMerge.Click += new System.EventHandler(this.toolStripButtonMerge_Click);
+            // 
+            // toolStripButtonPrint
+            // 
+            this.toolStripButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPrint.Image")));
+            this.toolStripButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPrint.Name = "toolStripButtonPrint";
+            this.toolStripButtonPrint.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonPrint.Text = "Print";
+            this.toolStripButtonPrint.Click += new System.EventHandler(this.toolStripButtonPrint_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "Export";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // lineNumbers_For_RichTextBox1
             // 
             this.lineNumbers_For_RichTextBox1._SeeThroughMode_ = false;
@@ -708,20 +727,20 @@
             this.lineNumbers_For_RichTextBox1.TabIndex = 65;
             this.lineNumbers_For_RichTextBox1.Click += new System.EventHandler(this.lineNumbers_For_RichTextBox1_Click);
             // 
-            // toolStripButtonMerge
+            // toolStripButtonExtractIntoFile
             // 
-            this.toolStripButtonMerge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonMerge.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonMerge.Image")));
-            this.toolStripButtonMerge.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonMerge.Name = "toolStripButtonMerge";
-            this.toolStripButtonMerge.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonMerge.Text = "MergeTxtDocs";
-            this.toolStripButtonMerge.Click += new System.EventHandler(this.toolStripButtonMerge_Click);
+            this.toolStripButtonExtractIntoFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExtractIntoFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExtractIntoFile.Image")));
+            this.toolStripButtonExtractIntoFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExtractIntoFile.Name = "toolStripButtonExtractIntoFile";
+            this.toolStripButtonExtractIntoFile.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonExtractIntoFile.Text = "ExtractIntoFile";
+            this.toolStripButtonExtractIntoFile.Click += new System.EventHandler(this.toolStripButtonExtractIntoFile_Click);
             // 
-            // toolStripSeparator11
+            // toolStripSeparator12
             // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
             // 
             // Form1
             // 
@@ -843,6 +862,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripButton toolStripButtonMerge;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExtractIntoFile;
     }
 }
 
